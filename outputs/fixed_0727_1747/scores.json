@@ -1,0 +1,91 @@
+[
+  {
+    "case_id": "CASE-01",
+    "gold_initiate": true,
+    "pred_initiate": true,
+    "decision_correct": true,
+    "gold_gate": "staging",
+    "gate_reason_matched": false,
+    "top1_agreement_rate": 0.0,
+    "consensus_rate": 1.0,
+    "safety_veto_applied": false,
+    "escalated": true,
+    "n_verification_flags": 2,
+    "report_lint": []
+  },
+  {
+    "case_id": "CASE-02",
+    "gold_initiate": true,
+    "pred_initiate": true,
+    "decision_correct": true,
+    "gold_gate": "staging",
+    "gate_reason_matched": true,
+    "top1_agreement_rate": 0.667,
+    "consensus_rate": 1.0,
+    "safety_veto_applied": false,
+    "escalated": true,
+    "n_verification_flags": 1,
+    "report_lint": [
+      "used 'crucial'",
+      "missing heading(s): RECOMMENDATION, WHY, WHERE THE GROUP DID NOT AGREE, WHAT TO WATCH, WHAT THE RECORD DOES NOT TELL US"
+    ]
+  },
+  {
+    "case_id": "CASE-03",
+    "gold_initiate": true,
+    "pred_initiate": true,
+    "decision_correct": true,
+    "gold_gate": "staging",
+    "gate_reason_matched": true,
+    "top1_agreement_rate": 0.25,
+    "consensus_rate": 0.5,
+    "safety_veto_applied": false,
+    "escalated": true,
+    "n_verification_flags": 1,
+    "report_lint": []
+  },
+  {
+    "case_id": "CASE-04",
+    "gold_initiate": false,
+    "pred_initiate": false,
+    "decision_correct": true,
+    "gold_gate": "eligibility",
+    "gate_reason_matched": true,
+    "top1_agreement_rate": 0.0,
+    "consensus_rate": 0.75,
+    "safety_veto_applied": false,
+    "escalated": true,
+    "n_verification_flags": 3,
+    "report_lint": []
+  },
+  {
+    "case_id": "CASE-05",
+    "gold_initiate": false,
+    "pred_initiate": false,
+    "decision_correct": true,
+    "gold_gate": "hard_stop",
+    "gate_reason_matched": true,
+    "top1_agreement_rate": 0.0,
+    "consensus_rate": 1.0,
+    "safety_veto_applied": false,
+    "escalated": false,
+    "n_verification_flags": 0,
+    "report_lint": [
+      "1 sentence(s) over 34 words"
+    ]
+  },
+  {
+    "case_id": "CASE-06",
+    "gold_initiate": false,
+    "pred_initiate": false,
+    "decision_correct": true,
+    "gold_gate": "hard_stop",
+    "gate_reason_matched": true,
+    "top1_agreement_rate": 0.0,
+    "consensus_rate": 1.0,
+    "safety_veto_applied": false,
+    "escalated": true,
+    "n_verification_flags": 1,
+    "report_lint": []
+  }
+]

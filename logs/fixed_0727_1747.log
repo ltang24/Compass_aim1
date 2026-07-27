@@ -1,0 +1,214 @@
+COMPASS Aim 1.1 prototype
+  backend   transformers
+  agents    4
+            agent_1  Qwen/Qwen2.5-7B-Instruct  (cuda:0)
+            agent_2  NousResearch/Meta-Llama-3.1-8B-Instruct  (cuda:1)
+            agent_3  google/gemma-2-9b-it  (cuda:2)
+            agent_4  aaditya/Llama3-OpenBioLLM-8B  (cuda:3)
+  cases     6
+  cards     22
+  seed      7
+  out       outputs/fixed_0727_1747
+  meta      outputs/fixed_0727_1747/run_meta.json
+  transcripts on  ->  outputs/fixed_0727_1747/CASE-XX_transcript.jsonl
+
+[load] auto-placement on, floor 22 GB free, 6 cards visible
+[load] agent_1: Qwen/Qwen2.5-7B-Instruct -> cuda:3 (50.4 GB free; config said cuda:0, ignored)
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights:   1%|          | 2/339 [00:00<00:26, 12.77it/s]Loading weights:   5%|▌         | 17/339 [00:00<00:04, 78.18it/s]Loading weights:  12%|█▏        | 42/339 [00:00<00:02, 146.39it/s]Loading weights:  19%|█▉        | 66/339 [00:00<00:01, 173.28it/s]Loading weights:  26%|██▋       | 89/339 [00:00<00:01, 188.98it/s]Loading weights:  33%|███▎      | 112/339 [00:00<00:01, 196.40it/s]Loading weights:  43%|████▎     | 147/339 [00:00<00:00, 233.95it/s]Loading weights:  51%|█████     | 172/339 [00:00<00:00, 235.19it/s]Loading weights:  58%|█████▊    | 196/339 [00:01<00:00, 227.16it/s]Loading weights:  65%|██████▍   | 220/339 [00:01<00:00, 210.81it/s]Loading weights:  72%|███████▏  | 244/339 [00:01<00:00, 212.20it/s]Loading weights:  79%|███████▉  | 269/339 [00:01<00:00, 213.01it/s]Loading weights:  86%|████████▋ | 293/339 [00:01<00:00, 205.92it/s]Loading weights:  94%|█████████▎| 317/339 [00:01<00:00, 213.84it/s]Loading weights: 100%|██████████| 339/339 [00:01<00:00, 201.56it/s]
+        cuda:3 using 15.7 GB of 50.9 GB
+[load] agent_2: NousResearch/Meta-Llama-3.1-8B-Instruct -> cuda:4 (45.1 GB free; config said cuda:1, ignored)
+Loading weights:   0%|          | 0/291 [00:00<?, ?it/s]Loading weights:   1%|          | 2/291 [00:00<00:15, 18.73it/s]Loading weights:   1%|▏         | 4/291 [00:00<00:31,  9.10it/s]Loading weights:  12%|█▏        | 35/291 [00:00<00:02, 92.14it/s]Loading weights:  24%|██▎       | 69/291 [00:00<00:01, 159.35it/s]Loading weights:  36%|███▌      | 104/291 [00:00<00:00, 213.01it/s]Loading weights:  47%|████▋     | 138/291 [00:00<00:00, 249.57it/s]Loading weights:  58%|█████▊    | 168/291 [00:00<00:00, 264.24it/s]Loading weights:  70%|██████▉   | 203/291 [00:01<00:00, 281.60it/s]Loading weights:  82%|████████▏ | 239/291 [00:01<00:00, 298.79it/s]Loading weights:  94%|█████████▍| 274/291 [00:01<00:00, 294.73it/s]Loading weights: 100%|██████████| 291/291 [00:01<00:00, 226.63it/s]
+        cuda:4 using 21.9 GB of 50.9 GB
+[load] agent_3: google/gemma-2-9b-it -> cuda:2 (39.7 GB free; config said cuda:2, ignored)
+Loading weights:   0%|          | 0/464 [00:00<?, ?it/s]Loading weights:   1%|          | 5/464 [00:00<00:09, 48.44it/s]Loading weights:  12%|█▏        | 55/464 [00:00<00:01, 307.89it/s]Loading weights:  20%|██        | 93/464 [00:00<00:01, 340.18it/s]Loading weights:  30%|██▉       | 138/464 [00:00<00:00, 382.57it/s]Loading weights:  40%|████      | 186/464 [00:00<00:00, 413.98it/s]Loading weights:  50%|████▉     | 231/464 [00:00<00:00, 421.65it/s]Loading weights:  60%|██████    | 279/464 [00:00<00:00, 436.91it/s]Loading weights:  70%|██████▉   | 324/464 [00:00<00:00, 437.80it/s]Loading weights:  80%|████████  | 373/464 [00:00<00:00, 451.80it/s]Loading weights:  90%|█████████ | 419/464 [00:01<00:00, 443.10it/s]Loading weights: 100%|██████████| 464/464 [00:01<00:00, 439.36it/s]Loading weights: 100%|██████████| 464/464 [00:01<00:00, 410.57it/s]
+        cuda:2 using 29.6 GB of 50.9 GB
+[load] agent_4: aaditya/Llama3-OpenBioLLM-8B -> cuda:1 (27.1 GB free; config said cuda:3, ignored)
+        agent_4: tokenizer had no chat_template, applied the Llama-3 instruct template
+Exception in thread Thread-auto_conversion:
+Traceback (most recent call last):
+  File "/home/ltang24/miniconda3/envs/upenn2/lib/python3.11/site-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
+    response.raise_for_status()
+  File "/home/ltang24/miniconda3/envs/upenn2/lib/python3.11/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '403 Forbidden' for url 'https://huggingface.co/api/models/aaditya/Llama3-OpenBioLLM-8B/discussions?p=0'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ltang24/miniconda3/envs/upenn2/lib/python3.11/threading.py", line 1045, in _bootstrap_inner
+    self.run()
+  File "/home/ltang24/miniconda3/envs/upenn2/lib/python3.11/threading.py", line 982, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/ltang24/miniconda3/envs/upenn2/lib/python3.11/site-packages/transformers/safetensors_conversion.py", line 117, in auto_conversion
+    raise e
+  File "/home/ltang24/miniconda3/envs/upenn2/lib/python3.11/site-packages/transformers/safetensors_conversion.py", line 96, in auto_conversion
+    sha = get_conversion_pr_reference(api, pretrained_model_name_or_path, **cached_file_kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ltang24/miniconda3/envs/upenn2/lib/python3.11/site-packages/transformers/safetensors_conversion.py", line 69, in get_conversion_pr_reference
+    pr = previous_pr(api, model_id, pr_title, token=token)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ltang24/miniconda3/envs/upenn2/lib/python3.11/site-packages/transformers/safetensors_conversion.py", line 14, in previous_pr
+    for discussion in get_repo_discussions(repo_id=model_id, token=token):
+  File "/home/ltang24/miniconda3/envs/upenn2/lib/python3.11/site-packages/huggingface_hub/hf_api.py", line 6502, in get_repo_discussions
+    discussions, has_next = _fetch_discussion_page(page_index=page_index)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ltang24/miniconda3/envs/upenn2/lib/python3.11/site-packages/huggingface_hub/hf_api.py", line 6491, in _fetch_discussion_page
+    hf_raise_for_status(resp)
+  File "/home/ltang24/miniconda3/envs/upenn2/lib/python3.11/site-packages/huggingface_hub/utils/_http.py", line 861, in hf_raise_for_status
+    raise _format(HfHubHTTPError, message, response) from e
+huggingface_hub.errors.HfHubHTTPError: (Request ID: Root=1-6a67d215-23985f745a3f226f3298bd84;c8dbaa95-1ac4-41aa-95c0-898e2adc5579)
+
+403 Forbidden: Discussions are disabled for this repo.
+Cannot access content at: https://huggingface.co/api/models/aaditya/Llama3-OpenBioLLM-8B/discussions?p=0.
+Make sure your token has the correct permissions.
+Loading weights:   0%|          | 0/291 [00:00<?, ?it/s]Loading weights:   1%|          | 2/291 [00:00<00:14, 19.84it/s]Loading weights:   1%|▏         | 4/291 [00:00<00:15, 18.46it/s]Loading weights:  13%|█▎        | 37/291 [00:00<00:01, 152.92it/s]Loading weights:  25%|██▍       | 72/291 [00:00<00:00, 227.64it/s]Loading weights:  37%|███▋      | 107/291 [00:00<00:00, 270.46it/s]Loading weights:  48%|████▊     | 141/291 [00:00<00:00, 288.53it/s]Loading weights:  60%|█████▉    | 174/291 [00:00<00:00, 295.19it/s]Loading weights:  71%|███████   | 206/291 [00:00<00:00, 294.52it/s]Loading weights:  86%|████████▋ | 251/291 [00:00<00:00, 339.29it/s]Loading weights:  99%|█████████▉| 288/291 [00:01<00:00, 346.86it/s]Loading weights: 100%|██████████| 291/291 [00:01<00:00, 278.41it/s]
+        cuda:1 using 39.9 GB of 50.9 GB
+[load] placement: agent_1=cuda:3, agent_2=cuda:4, agent_3=cuda:2, agent_4=cuda:1
+[CASE-01] deliberating
+  round 1  independent assessment
+           agent_1: start (confidence 4/5)
+           agent_2: start (confidence 4/5)
+           agent_3: start (confidence 4/5)
+           agent_4: needed a repair pass
+           agent_4: start (confidence 5/5)
+  round 2  cross-examination
+  round 3  revised positions
+           agent_1: start
+           agent_2: start
+           agent_3: start
+           agent_4: needed a repair pass, still unreadable
+           agent_4: do not start  (changed)
+  round 4  write-up  (chair: agent_2)
+           2 repair pass(es): agent_4 round1, agent_4 round3
+           -> outputs/fixed_0727_1747/CASE-01_report.txt
+           -> outputs/fixed_0727_1747/CASE-01_transcript.jsonl
+           76.7s
+
+[CASE-02] deliberating
+  round 1  independent assessment
+           agent_1: start (confidence 4/5)
+           agent_2: start (confidence 4/5)
+           agent_3: start (confidence 4/5)
+           agent_4: start (confidence 5/5)
+  round 2  cross-examination
+  round 3  revised positions
+           agent_1: start
+           agent_2: start
+           agent_3: start
+           agent_4: needed a repair pass, still unreadable
+           agent_4: do not start  (changed)
+  round 4  write-up  (chair: agent_4)
+           1 repair pass(es): agent_4 round3
+           -> outputs/fixed_0727_1747/CASE-02_report.txt
+           -> outputs/fixed_0727_1747/CASE-02_transcript.jsonl
+           84.5s
+
+[CASE-03] deliberating
+  round 1  independent assessment
+           agent_1: start (confidence 4/5)
+           agent_2: start (confidence 4/5)
+           agent_3: start (confidence 4/5)
+           agent_4: needed a repair pass
+           agent_4: start (confidence 5/5)
+  round 2  cross-examination
+  round 3  revised positions
+           agent_1: do not start  (changed)
+           agent_2: start
+           agent_3: do not start  (changed)
+           agent_4: needed a repair pass
+           agent_4: start
+  round 4  write-up  (chair: agent_2)
+           2 repair pass(es): agent_4 round1, agent_4 round3
+           -> outputs/fixed_0727_1747/CASE-03_report.txt
+           -> outputs/fixed_0727_1747/CASE-03_transcript.jsonl
+           84.3s
+
+[CASE-04] deliberating
+  round 1  independent assessment
+           agent_1: do not start (confidence 3/5)
+           agent_2: do not start (confidence 4/5)
+           agent_3: do not start (confidence 5/5)
+           agent_4: needed a repair pass, still unreadable
+           agent_4: do not start (confidence 0/5)
+  round 2  cross-examination
+  round 3  revised positions
+           agent_1: do not start
+           agent_2: start  (changed)
+           agent_3: do not start
+           agent_4: needed a repair pass
+           agent_4: do not start  (changed)
+  round 4  write-up  (chair: agent_3)
+           2 repair pass(es): agent_4 round1, agent_4 round3
+           -> outputs/fixed_0727_1747/CASE-04_report.txt
+           -> outputs/fixed_0727_1747/CASE-04_transcript.jsonl
+           76.3s
+
+[CASE-05] deliberating
+  round 1  independent assessment
+           agent_1: do not start (confidence 4/5)
+           agent_2: do not start (confidence 5/5)
+           agent_3: do not start (confidence 4/5)
+           agent_4: needed a repair pass
+           agent_4: start (confidence 5/5)
+  round 2  cross-examination
+  round 3  revised positions
+           agent_1: do not start
+           agent_2: do not start
+           agent_3: do not start
+           agent_4: do not start  (changed)
+  round 4  write-up  (chair: agent_1)
+           1 repair pass(es): agent_4 round1
+           -> outputs/fixed_0727_1747/CASE-05_report.txt
+           -> outputs/fixed_0727_1747/CASE-05_transcript.jsonl
+           75.7s
+
+[CASE-06] deliberating
+  round 1  independent assessment
+           agent_1: do not start (confidence 5/5)
+           agent_2: do not start (confidence 5/5)
+           agent_3: do not start (confidence 5/5)
+           agent_4: start (confidence 5/5)
+  round 2  cross-examination
+  round 3  revised positions
+           agent_1: do not start
+           agent_2: do not start
+           agent_3: do not start
+           agent_4: needed a repair pass
+           agent_4: do not start  (changed)
+  round 4  write-up  (chair: agent_3)
+           1 repair pass(es): agent_4 round3
+           -> outputs/fixed_0727_1747/CASE-06_report.txt
+           -> outputs/fixed_0727_1747/CASE-06_transcript.jsonl
+           66.1s
+
+
+==============================================================================
+RUN SUMMARY
+==============================================================================
+  Cases:                        6
+  Decision correct:             6/6
+  Reason matched the gold gate: 5/6
+  Hard-stop cases blocked:      2/2
+  Safety veto had to fire:      0/6
+  Sent for clinician review:    5/6
+
+  --------------------------------------------------------------------------
+  case       gold   pred   gate   top1   agree  flags
+  CASE-01    True   True   no     0.00   1.00   2
+  CASE-02    True   True   yes    0.67   1.00   1
+  CASE-03    True   True   yes    0.25   0.50   1
+  CASE-04    False  False  yes    0.00   0.75   3
+  CASE-05    False  False  yes    0.00   1.00   0
+  CASE-06    False  False  yes    0.00   1.00   1
+
+  Decision accuracy will sit near ceiling on these six cases by design.
+  The columns that carry information are gate, flags, and whether the
+  safety veto had to fire at all. A veto firing means a model wanted to
+  prescribe into a contraindication and only the deterministic rule
+  stopped it.
+==============================================================================
+
+finished in 464.3s
+outputs in outputs/fixed_0727_1747

@@ -1,0 +1,68 @@
+{
+  "started": "2026-07-27T17:47:47",
+  "argv": [
+    "run.py",
+    "--backend",
+    "transformers",
+    "--out",
+    "outputs/fixed_0727_1747"
+  ],
+  "backend": "transformers",
+  "seed": 7,
+  "dtype": "bfloat16",
+  "git_commit": "720f0ffc3b291af9e786de9ee79d5206cc5c21db-dirty",
+  "python": "3.11.15",
+  "host": "craft-1",
+  "cuda_visible_devices": "(unset)",
+  "gpus": [
+    "0, NVIDIA RTX 6000 Ada Generation, 49140 MiB, 45571 MiB",
+    "1, NVIDIA RTX 6000 Ada Generation, 49140 MiB, 22256 MiB",
+    "2, NVIDIA RTX 6000 Ada Generation, 49140 MiB, 10208 MiB",
+    "3, NVIDIA RTX 6000 Ada Generation, 49140 MiB, 5 MiB",
+    "4, NVIDIA RTX 6000 Ada Generation, 49140 MiB, 5106 MiB",
+    "5, NVIDIA RTX 6000 Ada Generation, 49140 MiB, 33496 MiB"
+  ],
+  "agents": [
+    {
+      "agent_id": "agent_1",
+      "model_name": "Qwen/Qwen2.5-7B-Instruct",
+      "gpu": 0
+    },
+    {
+      "agent_id": "agent_2",
+      "model_name": "NousResearch/Meta-Llama-3.1-8B-Instruct",
+      "gpu": 1
+    },
+    {
+      "agent_id": "agent_3",
+      "model_name": "google/gemma-2-9b-it",
+      "gpu": 2
+    },
+    {
+      "agent_id": "agent_4",
+      "model_name": "aaditya/Llama3-OpenBioLLM-8B",
+      "gpu": 3
+    }
+  ],
+  "cases": [
+    "CASE-01",
+    "CASE-02",
+    "CASE-03",
+    "CASE-04",
+    "CASE-05",
+    "CASE-06"
+  ],
+  "n_cards": 22,
+  "transcripts": true,
+  "finished": "2026-07-27T17:55:50",
+  "elapsed_s": 464.3,
+  "cases_completed": [
+    "CASE-01",
+    "CASE-02",
+    "CASE-03",
+    "CASE-04",
+    "CASE-05",
+    "CASE-06"
+  ],
+  "cases_failed": []
+}

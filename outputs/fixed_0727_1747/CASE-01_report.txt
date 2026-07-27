@@ -1,0 +1,82 @@
+==============================================================================
+COMPASS  case discussion  CASE-01
+47-year-old female, BMI 37.4, obesity medicine clinic, outpatient, 2026-06-11
+==============================================================================
+
+OUTCOME   START a GLP-1 based medicine
+          uncontrolled hypertension is an indication for GLP-1 receptor agonists
+
+------------------------------------------------------------------------------
+RECOMMENDATION
+Start a GLP-1 receptor agonist, liraglutide 0.6mg subcutaneously once daily,
+titrated to 1.8mg as tolerated.
+
+WHY
+• The patient meets the BMI threshold for obesity pharmacotherapy [GL-ELIG-
+  BMI].
+• She has multiple weight-related conditions, including essential
+  hypertension, mixed dyslipidemia, obstructive sleep apnea, prediabetes, and
+  hepatic steatosis [GL-STAGE-ABCD].
+• She has tried lifestyle treatment for 9 months with a best loss of 4.8% [GL-
+  ELIG-ADJUNCT].
+• She has uncontrolled hypertension despite current treatment [GL-ASCVD].
+
+WHERE THE GROUP DID NOT AGREE
+No disagreement. However, if the patient had a history of pancreatitis, the
+group may have considered a different option.
+
+WHAT TO WATCH
+• Monitor blood pressure and adjust antihypertensive medication as needed.
+• Monitor renal function and adjust the dose of liraglutide if necessary.
+• Warn the patient about potential gastrointestinal side effects, such as
+  nausea and vomiting.
+• Review the patient's response to therapy at the next outpatient visit in 3
+  months.
+
+WHAT THE RECORD DOES NOT TELL US
+• The patient's current medication list, including any medications that may
+  interact with liraglutide.
+• The patient's medical and family history of pancreatitis.
+• The patient's current level of physical activity and diet.
+
+------------------------------------------------------------------------------
+HOW THE GROUP VOTED
+  agent_1    start          conf 4/5   first choice: GLP-1 receptor agonist
+             Qwen/Qwen2.5-7B-Instruct
+  agent_2    start          conf 5/5   first choice: a GLP-1 receptor agonist
+             NousResearch/Meta-Llama-3.1-8B-Instruct
+  agent_3    start          conf 4/5   first choice: Start a GLP-1 receptor agonist
+             google/gemma-2-9b-it
+  agent_4    no readable answer   (aaditya/Llama3-OpenBioLLM-8B)
+
+  Agreement on the decision:  100%
+  Agreement on first choice:  33%
+
+CHECKS THAT FAILED
+  - agent_2: cited cards that were not supplied for this case (GL-ASCVD)
+  - agent_4: could not read a structured answer from the reply
+
+CLINICIAN REVIEW
+  Needed before acting. Reasons:
+    - 2 verification flag(s) were raised
+
+WHAT THE CHECKER COMPUTED BEFORE ANY MODEL SAW THE CASE
+  BMI: 37.4 kg/m2
+      basis: measured at the index visit
+  Meets the BMI threshold for obesity medicine: yes  [GL-ELIG-BMI]
+      basis: BMI 37.4 is at or above 30
+  Weight-related conditions on the problem list: Essential hypertension, Mixed dyslipidemia, Obstructive sleep apnea, moderate, AHI 21, Prediabetes, Hepatic steatosis on ultrasound, Bilateral knee osteoarthritis
+      basis: flagged in the structured problem list
+  Disease stage: stage 3  [GL-STAGE-ABCD]
+      basis: at least one severe complication (Obstructive sleep apnea, moderate, AHI 21)
+  Absolute contraindication present: no
+      basis: screen negative
+  Current medicines that promote weight gain: none  [GL-ELIG-MEDS-REVIEW]
+      basis: flagged in the medicine list
+  Lifestyle treatment already tried: 9 months, adherent, best loss 4.8%  [GL-ELIG-ADJUNCT]
+      basis: from the structured therapy history
+  Outpatient visits in the 24-month window: 10
+      basis: counted from the encounter list
+
+  Guideline cards supplied: GL-DOSE-INDIVIDUALISE, GL-ELIG-ADJUNCT, GL-ELIG-BMI, GL-ELIG-MEDS-REVIEW, GL-STAGE-ABCD, GL-STAGE-INTENSITY, GL-WEIGHT-TARGET
+==============================================================================

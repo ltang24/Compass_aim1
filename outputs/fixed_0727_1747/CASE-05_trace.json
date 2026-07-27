@@ -1,0 +1,328 @@
+{
+  "case_id": "CASE-05",
+  "final_initiate": false,
+  "final_reason": "Blocked by an absolute contraindication: personal history of medullary thyroid carcinoma; family history of medullary thyroid carcinoma; multiple endocrine neoplasia type 2",
+  "consensus_rate": 1.0,
+  "ranking_agreement": 0.25,
+  "safety_veto_applied": false,
+  "escalate_to_clinician": false,
+  "escalation_reasons": [],
+  "verification_flags": [],
+  "rubric": {
+    "hard_stop": true,
+    "hard_stop_reasons": [
+      "personal history of medullary thyroid carcinoma",
+      "family history of medullary thyroid carcinoma",
+      "multiple endocrine neoplasia type 2"
+    ],
+    "cautions": [],
+    "meets_bmi_threshold": true,
+    "threshold_basis": "BMI 38.5 is at or above 30",
+    "indication_independent_of_bmi": [],
+    "retrieved_card_ids": [
+      "GL-ALT-NONINCRETIN",
+      "GL-DOSE-INDIVIDUALISE",
+      "GL-ELIG-ADJUNCT",
+      "GL-ELIG-BMI",
+      "GL-ELIG-MEDS-REVIEW",
+      "GL-STAGE-ABCD",
+      "GL-STAGE-INTENSITY",
+      "GL-STOP-MTC",
+      "GL-WEIGHT-TARGET"
+    ],
+    "unknowns": []
+  },
+  "rounds": {
+    "round1": [
+      {
+        "agent_id": "agent_1",
+        "model_name": "Qwen/Qwen2.5-7B-Instruct",
+        "round_name": "round1",
+        "initiate": false,
+        "controlling_reason": "absolute contraindication due to personal and family history of medullary thyroid carcinoma",
+        "ranked_options": [
+          {
+            "rank": "1",
+            "option": "Metabolic surgery",
+            "detail": "Given the patient's significant weight and comorbidities, this could be considered as a viable alternative to pharmacotherapy."
+          },
+          {
+            "rank": "2",
+            "option": "Behavioral and lifestyle interventions",
+            "detail": "Continue and enhance existing behavioral and lifestyle programs to manage weight and comorbidities."
+          },
+          {
+            "rank": "3",
+            "option": "Other non-incretin medications",
+            "detail": "Consider other non-incretin medications, such as sibutramine or phentermine/topiramate, after thorough evaluation."
+          }
+        ],
+        "supporting_cards": [
+          "GL-ALT-NONINCRETIN"
+        ],
+        "watch_items": [
+          "Monitor for any signs of thyroid dysfunction or new thyroid nodules"
+        ],
+        "unknowns": [
+          "The patient's willingness and ability to undergo metabolic surgery"
+        ],
+        "confidence": 4,
+        "raw_text": "There is an absolute contraindication to using GLP-1 receptor agonists due to the patient's personal and family history of medullary thyroid carcinoma.\n\n```json\n{\n  \"initiate\": false,\n  \"controlling_reason\": \"absolute contraindication due to personal and family history of medullary thyroid carcinoma\",\n  \"ranked_options\": [\n    {\"rank\": \"1\", \"option\": \"Metabolic surgery\", \"detail\": \"Given the patient's significant weight and comorbidities, this could be considered as a viable alternative to pharmacotherapy.\"},\n    {\"rank\": \"2\", \"option\": \"Behavioral and lifestyle interventions\", \"detail\": \"Continue and enhance existing behavioral and lifestyle programs to manage weight and comorbidities.\"},\n    {\"rank\": \"3\", \"option\": \"Other non-incretin medications\", \"detail\": \"Consider other non-incretin medications, such as sibutramine or phentermine/topiramate, after thorough evaluation.\"}\n  ],\n  \"supporting_cards\": [\"GL-ALT-NONINCRETIN\"],\n  \"watch_items\": [\"Monitor for any signs of thyroid dysfunction or new thyroid nodules\"],\n  \"unknowns\": [\"The patient's willingness and ability to undergo metabolic surgery\"],\n  \"confidence\": 4\n}\n```",
+        "parse_ok": true,
+        "changed_from_previous": null,
+        "critique_of_peers": ""
+      },
+      {
+        "agent_id": "agent_2",
+        "model_name": "NousResearch/Meta-Llama-3.1-8B-Instruct",
+        "round_name": "round1",
+        "initiate": false,
+        "controlling_reason": "absolute contraindication to GLP-1 receptor agonists and dual GIP/GLP-1 agonists due to personal and family history of medullary thyroid carcinoma",
+        "ranked_options": [
+          {
+            "rank": "1",
+            "option": "Metformin",
+            "detail": "start with a low dose and gradually increase as needed, and monitor for gastrointestinal side effects"
+          },
+          {
+            "rank": "2",
+            "option": "Bupropion/naltrexone",
+            "detail": "start with a low dose and gradually increase as needed, and monitor for central nervous system side effects"
+          },
+          {
+            "rank": "3",
+            "option": "Metformin plus bupropion",
+            "detail": "start with a low dose and gradually increase as needed, and monitor for gastrointestinal and central nervous system side effects"
+          }
+        ],
+        "supporting_cards": [
+          "GL-ELIG-BMI",
+          "GL-STAGE-ABCD",
+          "GL-ALT-NONINCRETIN"
+        ],
+        "watch_items": [
+          "monitor for gastrointestinal side effects, central nervous system side effects, and changes in liver function tests"
+        ],
+        "unknowns": [
+          "the patient's response to these alternative treatments"
+        ],
+        "confidence": 5,
+        "raw_text": "1. Yes, there is an absolute contraindication due to the patient's personal and family history of medullary thyroid carcinoma, multiple endocrine neoplasia type 2, and the presence of a germline RET codon 634 mutation. This is an absolute contraindication for GLP-1 receptor agonists and dual GIP/GLP-1 agonists, as per the US prescribing information for these medications.\n\n2. The patient meets the eligibility rule for obesity pharmacotherapy based on his BMI of 38.5 kg/m2, which is above the threshold of 30 kg/m2, and the presence of multiple weight-related conditions, including essential hypertension, mixed dyslipidemia, prediabetes, and MASLD.\n\n3. There is no separate indication that does not depend on BMI or HbA1c.\n\n4. The patient has already tried lifestyle treatment for 12 months, which resulted in a weight loss of 2.4% of his initial weight, and he has not yet tried any obesity medicines.\n\n5. Given the absolute contraindication, we cannot start a GLP-1 receptor agonist or a dual GIP/GLP-1 agonist. We need to consider alternative treatments that do not involve the incretin pathway.\n\nTherefore, I would not initiate either a GLP-1 receptor agonist or a dual GIP/GLP-1 agonist.\n\n```json\n{\n  \"initiate\": false,\n  \"controlling_reason\": \"absolute contraindication to GLP-1 receptor agonists and dual GIP/GLP-1 agonists due to personal and family history of medullary thyroid carcinoma\",\n  \"ranked_options\": [\n    {\"rank\": \"1\", \"option\": \"Metformin\", \"detail\": \"start with a low dose and gradually increase as needed, and monitor for gastrointestinal side effects\"},\n    {\"rank\": \"2\", \"option\": \"Bupropion/naltrexone\", \"detail\": \"start with a low dose and gradually increase as needed, and monitor for central nervous system side effects\"},\n    {\"rank\": \"3\", \"option\": \"Metformin plus bupropion\", \"detail\": \"start with a low dose and gradually increase as needed, and monitor for gastrointestinal and central nervous system side effects\"}\n  ],\n  \"supporting_cards\": [\"GL-ELIG-BMI\", \"GL-STAGE-ABCD\", \"GL-ALT-NONINCRETIN\"],\n  \"watch_items\": [\"monitor for gastrointestinal side effects, central nervous system side effects, and changes in liver function tests\"],\n  \"unknowns\": [\"the patient's response to these alternative treatments\"],\n  \"confidence\": 5\n}\n```",
+        "parse_ok": true,
+        "changed_from_previous": null,
+        "critique_of_peers": ""
+      },
+      {
+        "agent_id": "agent_3",
+        "model_name": "google/gemma-2-9b-it",
+        "round_name": "round1",
+        "initiate": false,
+        "controlling_reason": "The patient has a personal history of medullary thyroid carcinoma, which is an absolute contraindication to GLP-1 receptor agonists and dual GIP/GLP-1 agonists.",
+        "ranked_options": [
+          {
+            "rank": "1",
+            "option": "Discuss non-incretin options",
+            "detail": "Explore alternatives like setmelanotide or phentermine/topiramate, considering the patient's needs and preferences."
+          },
+          {
+            "rank": "2",
+            "option": "Consider metabolic surgery",
+            "detail": "Evaluate the patient's suitability for bariatric surgery given their BMI and weight-related comorbidities."
+          },
+          {
+            "rank": "3",
+            "option": "Continue lifestyle modifications",
+            "detail": "Reinforce the importance of behavioral therapy and intensive lifestyle changes, including diet and exercise."
+          }
+        ],
+        "supporting_cards": [
+          "GL-ALT-NONINCRETIN"
+        ],
+        "watch_items": [
+          "Monitor for signs of weight regain",
+          "Continue close surveillance for thyroid cancer recurrence"
+        ],
+        "unknowns": [
+          "Patient's preference for alternative treatments",
+          "Patient's suitability for metabolic surgery"
+        ],
+        "confidence": 4,
+        "raw_text": "This patient has medullary thyroid carcinoma, which is an absolute contraindication to GLP-1 receptor agonists and dual GIP/GLP-1 agonists. \n\n```json\n{\n  \"initiate\": false,\n  \"controlling_reason\": \"The patient has a personal history of medullary thyroid carcinoma, which is an absolute contraindication to GLP-1 receptor agonists and dual GIP/GLP-1 agonists.\",\n  \"ranked_options\": [\n    {\"rank\": \"1\", \"option\": \"Discuss non-incretin options\", \"detail\": \"Explore alternatives like setmelanotide or phentermine/topiramate, considering the patient's needs and preferences.\"},\n    {\"rank\": \"2\", \"option\": \"Consider metabolic surgery\", \"detail\": \"Evaluate the patient's suitability for bariatric surgery given their BMI and weight-related comorbidities.\"},\n    {\"rank\": \"3\", \"option\": \"Continue lifestyle modifications\", \"detail\": \"Reinforce the importance of behavioral therapy and intensive lifestyle changes, including diet and exercise.\"}\n  ],\n  \"supporting_cards\": [\"GL-ALT-NONINCRETIN\"],\n  \"watch_items\": [\"Monitor for signs of weight regain\", \"Continue close surveillance for thyroid cancer recurrence\"],\n  \"unknowns\": [\"Patient's preference for alternative treatments\", \"Patient's suitability for metabolic surgery\"],\n  \"confidence\": 4\n}\n```",
+        "parse_ok": true,
+        "changed_from_previous": null,
+        "critique_of_peers": ""
+      },
+      {
+        "agent_id": "agent_4",
+        "model_name": "aaditya/Llama3-OpenBioLLM-8B",
+        "round_name": "round1",
+        "initiate": true,
+        "controlling_reason": "The patient meets the eligibility rule for obesity pharmacotherapy with a BMI of 38.5 kg/m2, and there is no absolute contraindication.",
+        "ranked_options": [
+          {
+            "rank": "1",
+            "option": "Start a GLP-1 receptor agonist.",
+            "detail": "Starting dose and how fast to step up will be based on safety and effectiveness, monitoring for hypoglycemia and renal function changes, considering diet and exercise adjustments as needed."
+          }
+        ],
+        "supporting_cards": [
+          "GL-ELIG-BMI"
+        ],
+        "watch_items": [
+          "Hypoglycemia, renal function"
+        ],
+        "unknowns": [
+          "Family history of papillary, follicular or Hurthle cell thyroid cancer"
+        ],
+        "confidence": 5,
+        "raw_text": "{\"initiate\": true, \"controlling_reason\": \"The patient meets the eligibility rule for obesity pharmacotherapy with a BMI of 38.5 kg/m2, and there is no absolute contraindication.\", \"ranked_options\": [{\"rank\": \"1\", \"option\": \"Start a GLP-1 receptor agonist.\", \"detail\": \"Starting dose and how fast to step up will be based on safety and effectiveness, monitoring for hypoglycemia and renal function changes, considering diet and exercise adjustments as needed.\"}], \"supporting_cards\": [\"GL-ELIG-BMI\"], \"watch_items\": [\"Hypoglycemia, renal function\"], \"unknowns\": [\"Family history of papillary, follicular or Hurthle cell thyroid cancer\"], \"confidence\": 5}",
+        "parse_ok": true,
+        "changed_from_previous": null,
+        "critique_of_peers": ""
+      }
+    ],
+    "round3": [
+      {
+        "agent_id": "agent_1",
+        "model_name": "Qwen/Qwen2.5-7B-Instruct",
+        "round_name": "round3",
+        "initiate": false,
+        "controlling_reason": "absolute contraindication due to personal and family history of medullary thyroid carcinoma",
+        "ranked_options": [
+          {
+            "rank": "1",
+            "option": "Metabolic surgery",
+            "detail": "Evaluate the patient for potential metabolic surgery options, such as Roux-en-Y gastric bypass, given their BMI and comorbidities."
+          },
+          {
+            "rank": "2",
+            "option": "Behavioral and lifestyle interventions",
+            "detail": "Continue and intensify behavioral and lifestyle interventions, focusing on diet, exercise, and behavior modification."
+          },
+          {
+            "rank": "3",
+            "option": "Other non-incretin medications",
+            "detail": "Consider other non-incretin medications that may help manage weight and comorbidities, such as sibutramine or phentermine, if appropriate and with careful monitoring."
+          }
+        ],
+        "supporting_cards": [
+          "GL-ALT-NONINCRETIN"
+        ],
+        "watch_items": [
+          "Monitor for signs of medullary thyroid carcinoma recurrence or progression, including changes in neck mass, hoarseness, or difficulty swallowing"
+        ],
+        "unknowns": [
+          "Exact timing and details of the patient's family history of medullary thyroid carcinoma"
+        ],
+        "confidence": 4,
+        "raw_text": "The presence of an absolute contraindication due to a personal and family history of medullary thyroid carcinoma remains the decisive factor.\n\n```json\n{\n  \"initiate\": false,\n  \"controlling_reason\": \"absolute contraindication due to personal and family history of medullary thyroid carcinoma\",\n  \"ranked_options\": [\n    {\"rank\": \"1\", \"option\": \"Metabolic surgery\", \"detail\": \"Evaluate the patient for potential metabolic surgery options, such as Roux-en-Y gastric bypass, given their BMI and comorbidities.\"},\n    {\"rank\": \"2\", \"option\": \"Behavioral and lifestyle interventions\", \"detail\": \"Continue and intensify behavioral and lifestyle interventions, focusing on diet, exercise, and behavior modification.\"},\n    {\"rank\": \"3\", \"option\": \"Other non-incretin medications\", \"detail\": \"Consider other non-incretin medications that may help manage weight and comorbidities, such as sibutramine or phentermine, if appropriate and with careful monitoring.\"}\n  ],\n  \"supporting_cards\": [\"GL-ALT-NONINCRETIN\"],\n  \"watch_items\": [\"Monitor for signs of medullary thyroid carcinoma recurrence or progression, including changes in neck mass, hoarseness, or difficulty swallowing\"],\n  \"unknowns\": [\"Exact timing and details of the patient's family history of medullary thyroid carcinoma\"],\n  \"confidence\": 4\n}\n```",
+        "parse_ok": true,
+        "changed_from_previous": false,
+        "critique_of_peers": "1. The strongest point against my position comes from Colleague B, who notes that the patient meets the eligibility criteria for obesity pharmacotherapy based on BMI alone and there is no absolute contraindication listed for GLP-1 receptor agonists or dual GIP/GLP-1 agonists. They suggest starting a GLP-1 receptor agonist.\n\n2. This point does not change my mind. The presence of an absolute contraindication due to a personal and family history of medullary thyroid carcinoma remains a critical factor. The guidelines clearly state that such a history is an absolute contraindication, and this overrides any other factors, including BMI eligibility.\n\n3. Colleague A asserts that the patient meets the eligibility rule for obesity pharmacotherapy based on BMI alone. However, the record explicitly states that there is an absolute contraindication present due to a personal and family history of medullary thyroid carcinoma. Therefore, the BMI eligibility criterion should not be considered in this case."
+      },
+      {
+        "agent_id": "agent_2",
+        "model_name": "NousResearch/Meta-Llama-3.1-8B-Instruct",
+        "round_name": "round3",
+        "initiate": false,
+        "controlling_reason": "Absolute contraindication to GLP-1 receptor agonists and dual GIP/GLP-1 agonists due to personal and family history of medullary thyroid carcinoma",
+        "ranked_options": [
+          {
+            "rank": "1",
+            "option": "Metformin",
+            "detail": "Start with metformin as a first-line pharmacologic treatment for type 2 diabetes and obesity, aiming for a target dose of 2000mg/day"
+          },
+          {
+            "rank": "2",
+            "option": "Bupropion/naltrexone",
+            "detail": "Consider adding bupropion/naltrexone if metformin is insufficient to achieve glycemic control and weight loss"
+          },
+          {
+            "rank": "3",
+            "option": "Metformin plus bupropion",
+            "detail": "Combine metformin with bupropion if bupropion/naltrexone is not effective or tolerated"
+          }
+        ],
+        "supporting_cards": [
+          "GL-ELIG-BMI",
+          "GL-STAGE-ABCD"
+        ],
+        "watch_items": [
+          "Monitor for signs of hypoglycemia, especially when combining metformin with other medications"
+        ],
+        "unknowns": [
+          "The patient's current medication adherence and potential side effects"
+        ],
+        "confidence": 5,
+        "raw_text": "I still believe that we should not start a GLP-1 receptor agonist or a dual GIP/GLP-1 agonist for this patient due to the absolute contraindication of medullary thyroid carcinoma and family history of the same.\n\n```json\n{\n  \"initiate\": false,\n  \"controlling_reason\": \"Absolute contraindication to GLP-1 receptor agonists and dual GIP/GLP-1 agonists due to personal and family history of medullary thyroid carcinoma\",\n  \"ranked_options\": [\n    {\"rank\": \"1\", \"option\": \"Metformin\", \"detail\": \"Start with metformin as a first-line pharmacologic treatment for type 2 diabetes and obesity, aiming for a target dose of 2000mg/day\"},\n    {\"rank\": \"2\", \"option\": \"Bupropion/naltrexone\", \"detail\": \"Consider adding bupropion/naltrexone if metformin is insufficient to achieve glycemic control and weight loss\"},\n    {\"rank\": \"3\", \"option\": \"Metformin plus bupropion\", \"detail\": \"Combine metformin with bupropion if bupropion/naltrexone is not effective or tolerated\"}\n  ],\n  \"supporting_cards\": [\"GL-ELIG-BMI\", \"GL-STAGE-ABCD\"],\n  \"watch_items\": [\"Monitor for signs of hypoglycemia, especially when combining metformin with other medications\"],\n  \"unknowns\": [\"The patient's current medication adherence and potential side effects\"],\n  \"confidence\": 5\n}\n```",
+        "parse_ok": true,
+        "changed_from_previous": false,
+        "critique_of_peers": "1. The strongest point against my position is made by Colleague A, who states that there is no absolute contraindication to starting a GLP-1 receptor agonist. This contradicts my decision to not start due to the patient's personal and family history of medullary thyroid carcinoma.\n\n2. This point does not change my mind because I believe the absolute contraindication takes precedence over the eligibility rule. The cards support the presence of an absolute contraindication (GL-STOP-MTC, GL-STOP-PREGNANCY, GL-STOP-HYPERSENS) and I am confident in my initial decision.\n\n3. I flag Colleague A's statement that there is no absolute contraindication. The record clearly states that an absolute contraindication is present (GL-STOP-MTC, GL-STOP-PREGNANCY, GL-STOP-HYPERSENS). Colleague A only cites GL-ELIG-BMI, which does not address the contraindication."
+      },
+      {
+        "agent_id": "agent_3",
+        "model_name": "google/gemma-2-9b-it",
+        "round_name": "round3",
+        "initiate": false,
+        "controlling_reason": "The patient has a personal history of medullary thyroid carcinoma.",
+        "ranked_options": [
+          {
+            "rank": "1",
+            "option": "Discuss non-incretin options",
+            "detail": "Explore alternatives such as metformin or other medications not associated with thyroid risk."
+          },
+          {
+            "rank": "2",
+            "option": "Consider metabolic surgery",
+            "detail": "Evaluate the patient's suitability for bariatric surgery."
+          },
+          {
+            "rank": "3",
+            "option": "Continue lifestyle modifications",
+            "detail": "Reinforce the importance of diet and exercise."
+          }
+        ],
+        "supporting_cards": [
+          "GL-STOP-MTC"
+        ],
+        "watch_items": [
+          "Monitor thyroid function regularly."
+        ],
+        "unknowns": [
+          "Patient's preference for different treatment options."
+        ],
+        "confidence": 5,
+        "raw_text": "The patient's history of medullary thyroid carcinoma is an absolute contraindication to GLP-1 receptor agonists and dual GIP/GLP-1 agonists.  \n\n```json\n{\n  \"initiate\": false,\n  \"controlling_reason\": \"The patient has a personal history of medullary thyroid carcinoma.\",\n  \"ranked_options\": [\n    {\"rank\": \"1\", \"option\": \"Discuss non-incretin options\", \"detail\": \"Explore alternatives such as metformin or other medications not associated with thyroid risk.\"},\n    {\"rank\": \"2\", \"option\": \"Consider metabolic surgery\", \"detail\": \"Evaluate the patient's suitability for bariatric surgery.\"},\n    {\"rank\": \"3\", \"option\": \"Continue lifestyle modifications\", \"detail\": \"Reinforce the importance of diet and exercise.\"}\n  ],\n  \"supporting_cards\": [\"GL-STOP-MTC\"],\n  \"watch_items\": [\"Monitor thyroid function regularly.\"],\n  \"unknowns\": [\"Patient's preference for different treatment options.\"],\n  \"confidence\": 5\n}\n```",
+        "parse_ok": true,
+        "changed_from_previous": false,
+        "critique_of_peers": "1. Colleague B's strongest point is that the patient meets the eligibility criteria for obesity pharmacotherapy with a BMI of 38.5 kg/m2, and there is no absolute contraindication. \n\n2. This does not change my mind. While the patient does meet the BMI criteria, the absolute contraindication due to their medical history outweighs this factor.\n\n3. Colleague A states that the patient has a history of essential hypertension and mixed dyslipidemia, but the record only lists \"Essential hypertension\" and \"Mixed dyslipidemia\" as weight-related conditions."
+      },
+      {
+        "agent_id": "agent_4",
+        "model_name": "aaditya/Llama3-OpenBioLLM-8B",
+        "round_name": "round3",
+        "initiate": false,
+        "controlling_reason": "The patient has a personal history of medullary thyroid carcinoma, which is an absolute contraindication to starting a GLP-1 receptor agonist.",
+        "ranked_options": [
+          {
+            "rank": "1",
+            "option": "Refer to an endocrinologist for further evaluation and management of the patient's medullary thyroid carcinoma.",
+            "detail": "No additional details provided."
+          }
+        ],
+        "supporting_cards": [
+          "GL-STOP-MTC"
+        ],
+        "watch_items": [
+          "Monitor for signs of medullary thyroid carcinoma recurrence or progression."
+        ],
+        "unknowns": [],
+        "confidence": 5,
+        "raw_text": "{\"initiate\": false, \"controlling_reason\": \"The patient has a personal history of medullary thyroid carcinoma, which is an absolute contraindication to starting a GLP-1 receptor agonist.\", \"ranked_options\": [{\"rank\": \"1\", \"option\": \"Refer to an endocrinologist for further evaluation and management of the patient's medullary thyroid carcinoma.\", \"detail\": \"No additional details provided.\"}], \"supporting_cards\": [\"GL-STOP-MTC\"], \"watch_items\": [\"Monitor for signs of medullary thyroid carcinoma recurrence or progression.\"], \"unknowns\": [], \"confidence\": 5}",
+        "parse_ok": true,
+        "changed_from_previous": true,
+        "critique_of_peers": "Strongest point against my position"
+      }
+    ]
+  }
+}

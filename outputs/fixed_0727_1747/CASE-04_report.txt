@@ -1,0 +1,79 @@
+==============================================================================
+COMPASS  case discussion  CASE-04
+34-year-old female, BMI 26.1, family medicine, outpatient, 2026-06-02
+==============================================================================
+
+OUTCOME   DO NOT start a GLP-1 based medicine
+          The patient does not meet the eligibility criteria for obesity pharmacotherapy.
+
+------------------------------------------------------------------------------
+## RECOMMENDATION
+Recommend lifestyle modifications and reassess in 6 months.
+
+## WHY
+* BMI is 26.1 kg/m2. [GL-ELIG-BMI]
+* The patient does not meet the BMI threshold for obesity pharmacotherapy.
+  [GL-ELIG-BMI]
+* The patient is stage 1. [GL-STAGE-ABCD]
+* No weight-related conditions are listed.
+* The patient has not tried lifestyle treatment. [GL-ELIG-ADJUNCT]
+
+## WHERE THE GROUP DID NOT AGREE
+There was disagreement about whether the patient's BMI was high enough to
+warrant starting medication. Agent 2 felt the BMI met the threshold, while
+agents 1, 3, and 4 felt it was too close to the threshold and more lifestyle
+modification was needed first.
+
+## WHAT TO WATCH
+Monitor weight. Warn the patient about potential side effects of lifestyle
+changes. Review in 6 months.
+
+## WHAT THE RECORD DOES NOT TELL US
+* Patient's diet and exercise habits.
+* Patient's goals for weight loss.
+* Patient's understanding of obesity and its management.
+* Patient's willingness to make lifestyle changes.
+
+------------------------------------------------------------------------------
+HOW THE GROUP VOTED
+  agent_1    do not start   conf 4/5   first choice: Refer for a structured lifestyle program
+             Qwen/Qwen2.5-7B-Instruct
+  agent_2    start          conf 4/5   first choice: Start a GLP-1 receptor agonist  changed after discussion
+             NousResearch/Meta-Llama-3.1-8B-Instruct
+  agent_3    do not start   conf 5/5   first choice: Recommend lifestyle modifications
+             google/gemma-2-9b-it
+  agent_4    do not start   conf 0/5   first choice: -  changed after discussion
+             aaditya/Llama3-OpenBioLLM-8B
+
+  Agreement on the decision:  75%
+  Agreement on first choice:  33%
+
+CHECKS THAT FAILED
+  - agent_2: recommended starting the drug although the eligibility threshold is not met and there is no separate indication
+  - agent_4: gave no guideline citation
+  - agent_4: gave a decision with no options
+
+CLINICIAN REVIEW
+  Needed before acting. Reasons:
+    - 3 verification flag(s) were raised
+
+WHAT THE CHECKER COMPUTED BEFORE ANY MODEL SAW THE CASE
+  BMI: 26.1 kg/m2
+      basis: measured at the index visit
+  Meets the BMI threshold for obesity medicine: no  [GL-ELIG-BMI]
+      basis: BMI 26.1 is below both the 30 and the 27 thresholds
+  Weight-related conditions on the problem list: none
+      basis: flagged in the structured problem list
+  Disease stage: stage 1  [GL-STAGE-ABCD]
+      basis: no weight-related conditions recorded
+  Absolute contraindication present: no
+      basis: screen negative
+  Current medicines that promote weight gain: none  [GL-ELIG-MEDS-REVIEW]
+      basis: flagged in the medicine list
+  Lifestyle treatment already tried: none recorded  [GL-ELIG-ADJUNCT]
+      basis: no structured program in the record
+  Outpatient visits in the 24-month window: 4
+      basis: counted from the encounter list
+
+  Guideline cards supplied: GL-DOSE-INDIVIDUALISE, GL-ELIG-ADJUNCT, GL-ELIG-BMI, GL-ELIG-MEDS-REVIEW, GL-NO-PHARM-STAGE1, GL-STAGE-ABCD, GL-WEIGHT-TARGET
+==============================================================================

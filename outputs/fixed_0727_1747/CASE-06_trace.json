@@ -1,0 +1,317 @@
+{
+  "case_id": "CASE-06",
+  "final_initiate": false,
+  "final_reason": "Blocked by an absolute contraindication: currently pregnant",
+  "consensus_rate": 1.0,
+  "ranking_agreement": 0.25,
+  "safety_veto_applied": false,
+  "escalate_to_clinician": true,
+  "escalation_reasons": [
+    "1 verification flag(s) were raised"
+  ],
+  "verification_flags": [
+    "agent_4: gave no guideline citation"
+  ],
+  "rubric": {
+    "hard_stop": true,
+    "hard_stop_reasons": [
+      "currently pregnant"
+    ],
+    "cautions": [],
+    "meets_bmi_threshold": true,
+    "threshold_basis": "BMI 34.1 is at or above 30",
+    "indication_independent_of_bmi": [],
+    "retrieved_card_ids": [
+      "GL-ALT-NONINCRETIN",
+      "GL-DOSE-INDIVIDUALISE",
+      "GL-ELIG-ADJUNCT",
+      "GL-ELIG-BMI",
+      "GL-ELIG-MEDS-REVIEW",
+      "GL-STAGE-ABCD",
+      "GL-STAGE-INTENSITY",
+      "GL-STOP-PREGNANCY",
+      "GL-WEIGHT-TARGET"
+    ],
+    "unknowns": []
+  },
+  "rounds": {
+    "round1": [
+      {
+        "agent_id": "agent_1",
+        "model_name": "Qwen/Qwen2.5-7B-Instruct",
+        "round_name": "round1",
+        "initiate": false,
+        "controlling_reason": "The patient is currently pregnant.",
+        "ranked_options": [
+          {
+            "rank": "1",
+            "option": "Lifestyle modifications",
+            "detail": "Continue and intensify nutritional counseling and exercise recommendations."
+          },
+          {
+            "rank": "2",
+            "option": "Monitor weight and glucose",
+            "detail": "Regularly assess weight and glycemic control during pregnancy."
+          },
+          {
+            "rank": "3",
+            "option": "Referral to nutritionist",
+            "detail": "Ensure the patient is receiving comprehensive dietary guidance tailored to her pregnancy and obesity status."
+          }
+        ],
+        "supporting_cards": [
+          "GL-STOP-PREGNANCY"
+        ],
+        "watch_items": [
+          "Weight gain, glycemic control, and any signs of complications related to obesity during pregnancy"
+        ],
+        "unknowns": [],
+        "confidence": 5,
+        "raw_text": "There is an absolute contraindication to initiating GLP-1 receptor agonists or dual GIP/GLP-1 agonists due to the patient's current pregnancy.\n\n```json\n{\n  \"initiate\": false,\n  \"controlling_reason\": \"The patient is currently pregnant.\",\n  \"ranked_options\": [\n    {\"rank\": \"1\", \"option\": \"Lifestyle modifications\", \"detail\": \"Continue and intensify nutritional counseling and exercise recommendations.\"},\n    {\"rank\": \"2\", \"option\": \"Monitor weight and glucose\", \"detail\": \"Regularly assess weight and glycemic control during pregnancy.\"},\n    {\"rank\": \"3\", \"option\": \"Referral to nutritionist\", \"detail\": \"Ensure the patient is receiving comprehensive dietary guidance tailored to her pregnancy and obesity status.\"}\n  ],\n  \"supporting_cards\": [\"GL-STOP-PREGNANCY\"],\n  \"watch_items\": [\"Weight gain, glycemic control, and any signs of complications related to obesity during pregnancy\"],\n  \"unknowns\": [],\n  \"confidence\": 5\n}\n```",
+        "parse_ok": true,
+        "changed_from_previous": null,
+        "critique_of_peers": ""
+      },
+      {
+        "agent_id": "agent_2",
+        "model_name": "NousResearch/Meta-Llama-3.1-8B-Instruct",
+        "round_name": "round1",
+        "initiate": false,
+        "controlling_reason": "The patient is currently pregnant.",
+        "ranked_options": [
+          {
+            "rank": "1",
+            "option": "Step up lifestyle treatment, such as increasing physical activity and a healthy diet.",
+            "detail": "As recommended in GL-STOP-PREGNANCY."
+          },
+          {
+            "rank": "2",
+            "option": "Consider referring the patient to a nutrition program for additional guidance.",
+            "detail": "To help the patient achieve a healthy weight during pregnancy."
+          }
+        ],
+        "supporting_cards": [
+          "GL-STOP-PREGNANCY"
+        ],
+        "watch_items": [
+          "Weight gain during pregnancy and potential impact on gestational diabetes"
+        ],
+        "unknowns": [
+          "Patient's current diet and physical activity level"
+        ],
+        "confidence": 5,
+        "raw_text": "1. Yes, there is an absolute contraindication: the patient is pregnant.\n\nTherefore, I will not initiate any GLP-1 receptor agonist or dual GIP/GLP-1 agonist.\n\n```json\n{\n  \"initiate\": false,\n  \"controlling_reason\": \"The patient is currently pregnant.\",\n  \"ranked_options\": [\n    {\"rank\": \"1\", \"option\": \"Step up lifestyle treatment, such as increasing physical activity and a healthy diet.\", \"detail\": \"As recommended in GL-STOP-PREGNANCY.\"},\n    {\"rank\": \"2\", \"option\": \"Consider referring the patient to a nutrition program for additional guidance.\", \"detail\": \"To help the patient achieve a healthy weight during pregnancy.\"}\n  ],\n  \"supporting_cards\": [\"GL-STOP-PREGNANCY\"],\n  \"watch_items\": [\"Weight gain during pregnancy and potential impact on gestational diabetes\"],\n  \"unknowns\": [\"Patient's current diet and physical activity level\"],\n  \"confidence\": 5\n}\n```",
+        "parse_ok": true,
+        "changed_from_previous": null,
+        "critique_of_peers": ""
+      },
+      {
+        "agent_id": "agent_3",
+        "model_name": "google/gemma-2-9b-it",
+        "round_name": "round1",
+        "initiate": false,
+        "controlling_reason": "The patient is pregnant.",
+        "ranked_options": [
+          {
+            "rank": "1",
+            "option": "Continue lifestyle interventions",
+            "detail": "Focus on healthy diet and exercise during pregnancy."
+          },
+          {
+            "rank": "2",
+            "option": "Reassess medication options post-partum",
+            "detail": "Discuss medication options again after the patient has finished breastfeeding."
+          }
+        ],
+        "supporting_cards": [
+          "GL-STOP-PREGNANCY"
+        ],
+        "watch_items": [
+          "Monitor weight gain throughout pregnancy",
+          "Continue to assess for gestational diabetes"
+        ],
+        "unknowns": [
+          "Patient's preference regarding postpartum contraception"
+        ],
+        "confidence": 5,
+        "raw_text": "This patient is pregnant, which is an absolute contraindication to GLP-1 receptor agonists and dual GIP/GLP-1 agonists. Therefore, I cannot start either medication at this time. \n\n```json\n{\n  \"initiate\": false,\n  \"controlling_reason\": \"The patient is pregnant.\",\n  \"ranked_options\": [\n    {\"rank\": \"1\", \"option\": \"Continue lifestyle interventions\", \"detail\": \"Focus on healthy diet and exercise during pregnancy.\"},\n    {\"rank\": \"2\", \"option\": \"Reassess medication options post-partum\", \"detail\": \"Discuss medication options again after the patient has finished breastfeeding.\"} \n  ],\n  \"supporting_cards\": [\"GL-STOP-PREGNANCY\"],\n  \"watch_items\": [\"Monitor weight gain throughout pregnancy\", \"Continue to assess for gestational diabetes\"],\n  \"unknowns\": [\"Patient's preference regarding postpartum contraception\"],\n  \"confidence\": 5\n}\n```",
+        "parse_ok": true,
+        "changed_from_previous": null,
+        "critique_of_peers": ""
+      },
+      {
+        "agent_id": "agent_4",
+        "model_name": "aaditya/Llama3-OpenBioLLM-8B",
+        "round_name": "round1",
+        "initiate": true,
+        "controlling_reason": "The patient is pregnant, and obesity medicines are contraindicated during pregnancy.",
+        "ranked_options": [
+          {
+            "rank": "1",
+            "option": "Start a GLP-1 receptor agonist.",
+            "detail": "None of the options you listed are suitable due to the patient's pregnancy."
+          },
+          {
+            "rank": "2",
+            "option": "Refer to a specialist for consideration of metabolic surgery.",
+            "detail": "Metabolic surgery may be considered for patients with extreme obesity and significant comorbidities, but the patient is early in pregnancy and the focus is on avoiding harm to the fetus."
+          }
+        ],
+        "supporting_cards": [
+          "GL-STOP-PREGNANCY"
+        ],
+        "watch_items": [
+          "Monitor the patient closely for signs of malnutrition, gestational diabetes, preeclampsia, and growth restriction of the fetus."
+        ],
+        "unknowns": [],
+        "confidence": 5,
+        "raw_text": "{\"initiate\": true, \"controlling_reason\": \"The patient is pregnant, and obesity medicines are contraindicated during pregnancy.\", \"ranked_options\": [{\"rank\": \"1\", \"option\": \"Start a GLP-1 receptor agonist.\", \"detail\": \"None of the options you listed are suitable due to the patient's pregnancy.\"}, {\"rank\": \"2\", \"option\": \"Refer to a specialist for consideration of metabolic surgery.\", \"detail\": \"Metabolic surgery may be considered for patients with extreme obesity and significant comorbidities, but the patient is early in pregnancy and the focus is on avoiding harm to the fetus.\"}], \"supporting_cards\": [\"GL-STOP-PREGNANCY\"], \"watch_items\": [\"Monitor the patient closely for signs of malnutrition, gestational diabetes, preeclampsia, and growth restriction of the fetus.\"], \"unknowns\": [], \"confidence\": 5}",
+        "parse_ok": true,
+        "changed_from_previous": null,
+        "critique_of_peers": ""
+      }
+    ],
+    "round3": [
+      {
+        "agent_id": "agent_1",
+        "model_name": "Qwen/Qwen2.5-7B-Instruct",
+        "round_name": "round3",
+        "initiate": false,
+        "controlling_reason": "The patient is currently pregnant.",
+        "ranked_options": [
+          {
+            "rank": "1",
+            "option": "Lifestyle modifications",
+            "detail": "Encourage increased physical activity and a healthy diet."
+          },
+          {
+            "rank": "2",
+            "option": "Monitor weight and glucose",
+            "detail": "Regularly check weight and glucose levels to manage risk factors."
+          },
+          {
+            "rank": "3",
+            "option": "Referral to nutritionist",
+            "detail": "Provide nutritional guidance and support for healthy eating habits."
+          }
+        ],
+        "supporting_cards": [
+          "GL-STOP-PREGNANCY"
+        ],
+        "watch_items": [
+          "Observe for any signs of complications related to obesity and previous gestational diabetes"
+        ],
+        "unknowns": [
+          "Current level of physical activity and dietary habits of the patient"
+        ],
+        "confidence": 5,
+        "raw_text": "The patient is currently pregnant, which is an absolute contraindication for starting any GLP-1 receptor agonist or dual GIP/GLP-1 agonist.\n\n```json\n{\n  \"initiate\": false,\n  \"controlling_reason\": \"The patient is currently pregnant.\",\n  \"ranked_options\": [\n    {\"rank\": \"1\", \"option\": \"Lifestyle modifications\", \"detail\": \"Encourage increased physical activity and a healthy diet.\"},\n    {\"rank\": \"2\", \"option\": \"Monitor weight and glucose\", \"detail\": \"Regularly check weight and glucose levels to manage risk factors.\"},\n    {\"rank\": \"3\", \"option\": \"Referral to nutritionist\", \"detail\": \"Provide nutritional guidance and support for healthy eating habits.\"}\n  ],\n  \"supporting_cards\": [\"GL-STOP-PREGNANCY\"],\n  \"watch_items\": [\"Observe for any signs of complications related to obesity and previous gestational diabetes\"],\n  \"unknowns\": [\"Current level of physical activity and dietary habits of the patient\"],\n  \"confidence\": 5\n}\n```",
+        "parse_ok": true,
+        "changed_from_previous": false,
+        "critique_of_peers": "1. The strongest point against my position comes from Colleague A, who argues that obesity medicines are contraindicated during pregnancy. They suggest starting a GLP-1 receptor agonist or considering metabolic surgery. This point is based on the card GL-STOP-PREGNANCY, which indicates an absolute contraindication due to pregnancy.\n\n2. While this point is valid, it does not change my decision. The absolute contraindication for pregnancy is clear, but the patient's history of gestational diabetes and current obesity status warrant ongoing management. Post-partum, we can reassess and potentially initiate appropriate therapy.\n\n3. Colleague B asserts that the patient should step up lifestyle treatment, such as increasing physical activity and a healthy diet. However, the record does not provide information on the patient's current level of physical activity or dietary habits, making it difficult to assess the effectiveness of these interventions alone. Additionally, Colleague C suggests continuing lifestyle interventions and reassessing post-partum, which aligns with the available information but does not address the need for structured support during this critical period."
+      },
+      {
+        "agent_id": "agent_2",
+        "model_name": "NousResearch/Meta-Llama-3.1-8B-Instruct",
+        "round_name": "round3",
+        "initiate": false,
+        "controlling_reason": "The patient is currently pregnant.",
+        "ranked_options": [
+          {
+            "rank": "1",
+            "option": "Step up lifestyle treatment, such as increasing physical activity and a healthy diet.",
+            "detail": "Consider consulting a registered dietitian or a certified diabetes educator for personalized guidance."
+          },
+          {
+            "rank": "2",
+            "option": "Consider referring the patient to a nutrition program for additional guidance.",
+            "detail": "This can help the patient develop a tailored plan for healthy eating and physical activity."
+          },
+          {
+            "rank": "3",
+            "option": "Schedule a follow-up appointment in 3 months to reassess progress and adjust the treatment plan as needed.",
+            "detail": "Regular follow-ups will help monitor the patient's progress and make adjustments to the treatment plan to ensure it remains effective."
+          }
+        ],
+        "supporting_cards": [
+          "GL-STOP-PREGNANCY"
+        ],
+        "watch_items": [
+          "Monitor the patient's weight, blood pressure, and blood glucose levels regularly to assess the effectiveness of lifestyle interventions and make necessary adjustments."
+        ],
+        "unknowns": [
+          "The patient's current level of physical activity and dietary habits, the effectiveness of previous lifestyle interventions, and the patient's willingness to make changes."
+        ],
+        "confidence": 4,
+        "raw_text": "I still believe that we should not start an obesity medicine due to the absolute contraindication of pregnancy. However, I agree that continuing lifestyle interventions may be a reasonable approach, despite the lack of information on their effectiveness and plans for modification. Given the patient's history of gestational diabetes and class I obesity, it's essential to address her weight-related conditions. Referring her to a nutrition program could be a good starting point, as it can provide additional guidance and support for sustainable lifestyle changes.\n\n```json\n{\n  \"initiate\": false,\n  \"controlling_reason\": \"The patient is currently pregnant.\",\n  \"ranked_options\": [\n    {\"rank\": \"1\", \"option\": \"Step up lifestyle treatment, such as increasing physical activity and a healthy diet.\", \"detail\": \"Consider consulting a registered dietitian or a certified diabetes educator for personalized guidance.\"},\n    {\"rank\": \"2\", \"option\": \"Consider referring the patient to a nutrition program for additional guidance.\", \"detail\": \"This can help the patient develop a tailored plan for healthy eating and physical activity.\"},\n    {\"rank\": \"3\", \"option\": \"Schedule a follow-up appointment in 3 months to reassess progress and adjust the treatment plan as needed.\", \"detail\": \"Regular follow-ups will help monitor the patient's progress and make adjustments to the treatment plan to ensure it remains effective.\"}\n  ],\n  \"supporting_cards\": [\"GL-STOP-PREGNANCY\"],\n  \"watch_items\": [\"Monitor the patient's weight, blood pressure, and blood glucose levels regularly to assess the effectiveness of lifestyle interventions and make necessary adjustments.\"],\n  \"unknowns\": [\"The patient's current level of physical activity and dietary habits, the effectiveness of previous lifestyle interventions, and the patient's willingness to make changes.\"],\n  \"confidence\": 4\n}\n```",
+        "parse_ok": true,
+        "changed_from_previous": false,
+        "critique_of_peers": "1. The strongest point against my position is COLLEAGUE A's argument that obesity medicines are contraindicated during pregnancy. They cited GL-STOP-PREGNANCY, which explicitly states that obesity medicines are contraindicated during pregnancy.\n\n2. This point does not change my mind because I agree with COLLEAGUE A that the patient should not start an obesity medicine due to the absolute contraindication. However, I disagree with their suggestion to start a GLP-1 receptor agonist, as this would be contraindicated in pregnancy. Instead, I believe that we should consider other options that do not pose a risk to the fetus.\n\n3. COLLEAGUE B and COLLEAGUE C both suggested continuing lifestyle interventions, but the record does not mention whether these have been effective in the past or if there are any specific plans to modify them. I would like to see more information on this before making a recommendation. Additionally, COLLEAGUE A did not provide any evidence to support their suggestion to refer the patient to a specialist for consideration of metabolic surgery, and this option is not supported by the cards provided."
+      },
+      {
+        "agent_id": "agent_3",
+        "model_name": "google/gemma-2-9b-it",
+        "round_name": "round3",
+        "initiate": false,
+        "controlling_reason": "The patient is currently pregnant.",
+        "ranked_options": [
+          {
+            "rank": "1",
+            "option": "Continue lifestyle interventions",
+            "detail": "Focus on healthy diet and exercise."
+          },
+          {
+            "rank": "2",
+            "option": "Reassess medication options postpartum",
+            "detail": "Discuss GLP-1 agonists after delivery."
+          },
+          {
+            "rank": "3",
+            "option": "Refer to a specialist for consideration of metabolic surgery",
+            "detail": "Explore surgical options if appropriate."
+          }
+        ],
+        "supporting_cards": [
+          "GL-STOP-PREGNANCY"
+        ],
+        "watch_items": [
+          "Monitor weight gain during pregnancy",
+          "Assess for gestational diabetes complications"
+        ],
+        "unknowns": [
+          "Patient's preferences regarding metabolic surgery",
+          "Details of previous lifestyle interventions"
+        ],
+        "confidence": 5,
+        "raw_text": "I agree with Colleague B. While GLP-1 receptor agonists can be effective for weight management, they are absolutely contraindicated during pregnancy.  \n\n```json\n{\n  \"initiate\": false,\n  \"controlling_reason\": \"The patient is currently pregnant.\",\n  \"ranked_options\": [\n    {\"rank\": \"1\", \"option\": \"Continue lifestyle interventions\", \"detail\": \"Focus on healthy diet and exercise.\"},\n    {\"rank\": \"2\", \"option\": \"Reassess medication options postpartum\", \"detail\": \"Discuss GLP-1 agonists after delivery.\"},\n    {\"rank\": \"3\", \"option\": \"Refer to a specialist for consideration of metabolic surgery\", \"detail\": \"Explore surgical options if appropriate.\"}\n  ],\n  \"supporting_cards\": [\"GL-STOP-PREGNANCY\"],\n  \"watch_items\": [\"Monitor weight gain during pregnancy\", \"Assess for gestational diabetes complications\"],\n  \"unknowns\": [\"Patient's preferences regarding metabolic surgery\", \"Details of previous lifestyle interventions\"],\n  \"confidence\": 5\n}\n```",
+        "parse_ok": true,
+        "changed_from_previous": false,
+        "critique_of_peers": "1. Colleague B's strongest point is that obesity medicines are contraindicated during pregnancy.  This is true.\n\n2. This does change my mind.  While I correctly identified the absolute contraindication, I failed to consider its implications for medication initiation. \n\n3. Colleague B states that \"refer to a specialist for consideration of metabolic surgery\" is an option. The record does not mention any discussion of metabolic surgery."
+      },
+      {
+        "agent_id": "agent_4",
+        "model_name": "aaditya/Llama3-OpenBioLLM-8B",
+        "round_name": "round3",
+        "initiate": false,
+        "controlling_reason": "The patient is currently pregnant, and obesity medicines are contraindicated during pregnancy.",
+        "ranked_options": [
+          {
+            "rank": "1",
+            "option": "Refer to a specialist for consideration of metabolic surgery.",
+            "detail": "Given her partial adherence to lifestyle treatment and best weight loss of 2.0%, it is important to consider referral to a specialist for consideration of metabolic surgery."
+          }
+        ],
+        "supporting_cards": [],
+        "watch_items": [],
+        "unknowns": [
+          "What is the patient's medical history? What is her current health status?"
+        ],
+        "confidence": 5,
+        "raw_text": "{\"initiate\": false, \"controlling_reason\": \"The patient is currently pregnant, and obesity medicines are contraindicated during pregnancy.\", \"ranked_options\": [{\"rank\": \"1\", \"option\": \"Refer to a specialist for consideration of metabolic surgery.\", \"detail\": \"Given her partial adherence to lifestyle treatment and best weight loss of 2.0%, it is important to consider referral to a specialist for consideration of metabolic surgery.\"}], \"supporting_cards\": [], \"watch_items\": [], \"unknowns\": [\"What is the patient's medical history? What is her current health status?\"], \"confidence\": 5}",
+        "parse_ok": true,
+        "changed_from_previous": true,
+        "critique_of_peers": "Strongest Point Against Position"
+      }
+    ]
+  }
+}

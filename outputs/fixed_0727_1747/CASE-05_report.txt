@@ -1,0 +1,73 @@
+==============================================================================
+COMPASS  case discussion  CASE-05
+41-year-old male, BMI 38.5, obesity medicine clinic, outpatient, 2026-06-16
+==============================================================================
+
+OUTCOME   DO NOT start a GLP-1 based medicine
+          Blocked by an absolute contraindication: personal history of medullary thyroid carcinoma; family history of medullary thyroid carcinoma; multiple endocrine neoplasia type 2
+
+------------------------------------------------------------------------------
+**RECOMMENDATION**
+Do not start a GLP-1 receptor agonist or a dual GIP/GLP-1 agonist.
+
+**WHY**
+- **Absolute contraindication due to personal and family history of medullary
+  thyroid carcinoma**: GL-STOP-MTC
+- **BMI meets the threshold for obesity medicine**: GL-ELIG-BMI
+- **Disease stage 2**: GL-STAGE-ABCD
+
+**WHERE THE GROUP DID NOT AGREE**
+No disagreement. Everyone agreed on the absolute contraindication and the need
+to avoid GLP-1 receptor agonists and dual GIP/GLP-1 agonists.
+
+**WHAT TO WATCH**
+- Monitor the patient’s blood glucose levels and thyroid function tests.
+- Warn the patient about the importance of regular follow-ups with an
+  endocrinologist.
+- Review the patient’s progress in 3 months.
+
+**WHAT THE RECORD DOES NOT TELL US**
+- Whether the patient has been evaluated by an endocrinologist for his
+  personal history of medullary thyroid carcinoma.
+- The current status of the patient’s essential hypertension, mixed
+  dyslipidemia, and prediabetes.
+- The specific details of the behavioral and lifestyle interventions currently
+  being used.
+
+------------------------------------------------------------------------------
+HOW THE GROUP VOTED
+  agent_1    do not start   conf 4/5   first choice: Metabolic surgery
+             Qwen/Qwen2.5-7B-Instruct
+  agent_2    do not start   conf 5/5   first choice: Metformin
+             NousResearch/Meta-Llama-3.1-8B-Instruct
+  agent_3    do not start   conf 5/5   first choice: Discuss non-incretin options
+             google/gemma-2-9b-it
+  agent_4    do not start   conf 5/5   first choice: Refer to an endocrinologist for further evaluation and management of the patient's medullary thyroid carcinoma.  changed after discussion
+             aaditya/Llama3-OpenBioLLM-8B
+
+  Agreement on the decision:  100%
+  Agreement on first choice:  25%
+
+CLINICIAN REVIEW
+  Not flagged. The group agreed, confidence was adequate, and no checks failed.
+
+WHAT THE CHECKER COMPUTED BEFORE ANY MODEL SAW THE CASE
+  BMI: 38.5 kg/m2
+      basis: measured at the index visit
+  Meets the BMI threshold for obesity medicine: yes  [GL-ELIG-BMI]
+      basis: BMI 38.5 is at or above 30
+  Weight-related conditions on the problem list: Class II obesity, Essential hypertension, Mixed dyslipidemia, Prediabetes, MASLD
+      basis: flagged in the structured problem list
+  Disease stage: stage 2  [GL-STAGE-ABCD]
+      basis: mild to moderate weight-related conditions present
+  Absolute contraindication present: YES  [GL-STOP-MTC, GL-STOP-PREGNANCY, GL-STOP-HYPERSENS]
+      basis: personal history of medullary thyroid carcinoma; family history of medullary thyroid carcinoma; multiple endocrine neoplasia type 2
+  Current medicines that promote weight gain: none  [GL-ELIG-MEDS-REVIEW]
+      basis: flagged in the medicine list
+  Lifestyle treatment already tried: 12 months, adherent, best loss 2.4%  [GL-ELIG-ADJUNCT]
+      basis: from the structured therapy history
+  Outpatient visits in the 24-month window: 9
+      basis: counted from the encounter list
+
+  Guideline cards supplied: GL-ALT-NONINCRETIN, GL-DOSE-INDIVIDUALISE, GL-ELIG-ADJUNCT, GL-ELIG-BMI, GL-ELIG-MEDS-REVIEW, GL-STAGE-ABCD, GL-STAGE-INTENSITY, GL-STOP-MTC, GL-WEIGHT-TARGET
+==============================================================================

@@ -1,0 +1,67 @@
+==============================================================================
+COMPASS  case discussion  CASE-02
+58-year-old male, BMI 29.4, endocrinology consult, outpatient, 2026-06-24
+==============================================================================
+
+OUTCOME   START a GLP-1 based medicine
+          established ASCVD provides a separate indication for GLP-1 receptor agonist use
+
+------------------------------------------------------------------------------
+The clinician will see this patient on 2026-06-24. The patient is a 58-year-
+old male with a BMI of 29.4 kg/m2, which meets the threshold for obesity
+medicine. He has Type 2 diabetes mellitus, Established ASCVD (NSTEMI with a
+drug-eluting stent to proximal LAD), Essential hypertension, and Dyslipidemia.
+The disease stage is stage 3. There is no absolute contraindication. The
+patient has already tried lifestyle treatment for 3 months with a 2.0% weight
+loss. He has had 8 outpatient visits in the past 2 years. It is important to
+check his status before starting any new treatment due to diabetic retinopathy
+on the problem list.  The clinician should start the patient on a GLP-1
+receptor agonist, choosing either semaglutide or liraglutide as the first
+option. A dual GIP/GLP-1 agonist may also be considered. It is crucial to
+monitor the patient for any adverse effects and to review progress regularly.
+Further investigation is needed regarding the patient's medical history to
+ensure safe and effective treatment.
+
+------------------------------------------------------------------------------
+HOW THE GROUP VOTED
+  agent_1    start          conf 4/5   first choice: semaglutide
+             Qwen/Qwen2.5-7B-Instruct
+  agent_2    start          conf 4/5   first choice: semaglutide
+             NousResearch/Meta-Llama-3.1-8B-Instruct
+  agent_3    start          conf 4/5   first choice: Start a GLP-1 receptor agonist
+             google/gemma-2-9b-it
+  agent_4    no readable answer   (aaditya/Llama3-OpenBioLLM-8B)
+
+  Agreement on the decision:  100%
+  Agreement on first choice:  67%
+
+CHECKS THAT FAILED
+  - agent_4: could not read a structured answer from the reply
+
+CLINICIAN REVIEW
+  Needed before acting. Reasons:
+    - 1 verification flag(s) were raised
+
+WHAT THE CHECKER COMPUTED BEFORE ANY MODEL SAW THE CASE
+  BMI: 29.4 kg/m2
+      basis: measured at the index visit
+  Meets the BMI threshold for obesity medicine: yes  [GL-ELIG-BMI]
+      basis: BMI 29.4 is at or above 27 and there is at least one weight-related condition (Type 2 diabetes mellitus)
+  Weight-related conditions on the problem list: Type 2 diabetes mellitus, Established ASCVD: NSTEMI with drug-eluting stent to proximal LAD, Essential hypertension, Dyslipidemia
+      basis: flagged in the structured problem list
+  Disease stage: stage 3  [GL-STAGE-ABCD]
+      basis: at least one severe complication (Established ASCVD: NSTEMI with drug-eluting stent to proximal LAD)
+  Separate indication that does not depend on BMI or HbA1c: type 2 diabetes with established cardiovascular disease  [GL-ASCVD]
+      basis: condition combination named in the guideline cards
+  Absolute contraindication present: no
+      basis: screen negative
+  Current medicines that promote weight gain: metoprolol succinate  [GL-ELIG-MEDS-REVIEW]
+      basis: flagged in the medicine list
+  Lifestyle treatment already tried: 3 months, adherent, best loss 2.0%  [GL-ELIG-ADJUNCT]
+      basis: from the structured therapy history
+  Outpatient visits in the 24-month window: 8
+      basis: counted from the encounter list
+  Cautions: diabetic retinopathy on the problem list, check status before starting
+
+  Guideline cards supplied: GL-ASCVD, GL-CARDIORENAL-PRIMACY, GL-CAUTION-RETINOPATHY, GL-DOSE-INDIVIDUALISE, GL-ELIG-ADJUNCT, GL-ELIG-BMI, GL-ELIG-MEDS-REVIEW, GL-STAGE-ABCD, GL-STAGE-INTENSITY, GL-WEIGHT-TARGET
+==============================================================================

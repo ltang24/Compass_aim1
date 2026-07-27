@@ -1,0 +1,90 @@
+==============================================================================
+COMPASS  case discussion  CASE-03
+63-year-old female, BMI 41.2, endocrinology consult, outpatient, 2026-05-19
+==============================================================================
+
+OUTCOME   START a GLP-1 based medicine
+          The patient has chronic kidney disease stage G3a category A3, which requires a medicine with proven kidney benefit.
+
+------------------------------------------------------------------------------
+RECOMMENDATION
+Start a GLP-1 receptor agonist, specifically liraglutide, at a dose of 0.6mg
+once weekly.
+
+WHY
+• The patient meets the BMI threshold for obesity medicine [GL-ELIG-BMI].
+• The patient has type 2 diabetes with chronic kidney disease, a separate
+  indication that warrants a medicine with proven kidney benefit [GL-CKD].
+• The patient has tried lifestyle treatment for 12 months with a best loss of
+  1.6% [GL-ELIG-ADJUNCT].
+• The patient has chronic kidney disease stage G3a category A3, which requires
+  a medicine with proven kidney benefit [GL-CKD].
+• There are no absolute contraindications to starting a GLP-1 receptor agonist
+  [SAFETY RULING].
+
+WHERE THE GROUP DID NOT AGREE
+The group disagreed about the specific type of medication to start, with some
+members recommending a dual GIP/GLP-1 agonist or discussing SGLT2 inhibitors.
+However, all members agreed that the patient required a medicine with proven
+kidney benefits due to their chronic kidney disease.
+
+WHAT TO WATCH
+• Monitor the patient's kidney function regularly, including eGFR and
+  creatinine levels.
+• Check the patient's diabetic retinopathy status before starting the
+  medication.
+• Warn the patient about the risk of dehydration if they become unwell while
+  taking the medication.
+• Review the patient's kidney function and adjust the medication as needed.
+
+WHAT THE RECORD DOES NOT TELL US
+• The patient's current level of physical activity and diet.
+• The patient's current medication regimen, aside from those that promote
+  weight gain.
+• The patient's history of medication adherence and potential side effects.
+
+------------------------------------------------------------------------------
+HOW THE GROUP VOTED
+  agent_1    do not start   conf 4/5   first choice: Dual GIP/GLP-1 agonist  changed after discussion
+             Qwen/Qwen2.5-7B-Instruct
+  agent_2    start          conf 4/5   first choice: semaglutide
+             NousResearch/Meta-Llama-3.1-8B-Instruct
+  agent_3    do not start   conf 4/5   first choice: Discuss SGLT2 inhibitors  changed after discussion
+             google/gemma-2-9b-it
+  agent_4    start          conf 5/5   first choice: Start a GLP-1 receptor agonist.
+             aaditya/Llama3-OpenBioLLM-8B
+
+  Agreement on the decision:  50%
+  Agreement on first choice:  25%
+
+CHECKS THAT FAILED
+  - agent_3: gave no guideline citation
+
+CLINICIAN REVIEW
+  Needed before acting. Reasons:
+    - the group split on the decision (50% agreement)
+    - 1 verification flag(s) were raised
+
+WHAT THE CHECKER COMPUTED BEFORE ANY MODEL SAW THE CASE
+  BMI: 41.2 kg/m2
+      basis: measured at the index visit
+  Meets the BMI threshold for obesity medicine: yes  [GL-ELIG-BMI]
+      basis: BMI 41.2 is at or above 30
+  Weight-related conditions on the problem list: Type 2 diabetes mellitus, Chronic kidney disease stage G3a category A3, Essential hypertension, Obstructive sleep apnea, severe, AHI 34, MASLD with raised transaminases
+      basis: flagged in the structured problem list
+  Disease stage: stage 3  [GL-STAGE-ABCD]
+      basis: at least one severe complication (Chronic kidney disease stage G3a category A3)
+  Separate indication that does not depend on BMI or HbA1c: type 2 diabetes with chronic kidney disease  [GL-CKD]
+      basis: condition combination named in the guideline cards
+  Absolute contraindication present: no
+      basis: screen negative
+  Current medicines that promote weight gain: none  [GL-ELIG-MEDS-REVIEW]
+      basis: flagged in the medicine list
+  Lifestyle treatment already tried: 12 months, adherent, best loss 1.6%  [GL-ELIG-ADJUNCT]
+      basis: from the structured therapy history
+  Outpatient visits in the 24-month window: 11
+      basis: counted from the encounter list
+  Cautions: diabetic retinopathy on the problem list, check status before starting; on kidney-active medicines with reduced eGFR, dehydration risk if the patient becomes unwell
+
+  Guideline cards supplied: GL-CARDIORENAL-PRIMACY, GL-CAUTION-RETINOPATHY, GL-CKD, GL-DOSE-INDIVIDUALISE, GL-ELIG-ADJUNCT, GL-ELIG-BMI, GL-ELIG-MEDS-REVIEW, GL-RENAL-NO-ADJUST, GL-STAGE-ABCD, GL-STAGE-INTENSITY, GL-VOLUME-AKI, GL-WEIGHT-TARGET
+==============================================================================
