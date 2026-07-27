@@ -17,8 +17,7 @@ Four language models deliberate over six synthetic GLP-1 prescribing cases, with
 | **Decision correct** | **6 / 6** |
 | **Hard-stop cases blocked** | **2 / 2** |
 | **Safety veto had to fire** | **0 / 6** |
-| Reason matched the gold decision gate | 5 / 6 |
-| Sent for clinician review | 5 / 6 |
+
 
 ```
   case       gold   pred   gate   top1   agree  flags
