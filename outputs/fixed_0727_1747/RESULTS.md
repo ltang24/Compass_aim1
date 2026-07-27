@@ -20,13 +20,13 @@ Four language models deliberate over six synthetic GLP-1 prescribing cases, with
 
 
 ```
-  case       gold   pred   gate   top1   agree  flags
-  CASE-01    True   True   no     0.00   1.00   2
-  CASE-02    True   True   yes    0.67   1.00   1
-  CASE-03    True   True   yes    0.25   0.50   1
-  CASE-04    False  False  yes    0.00   0.75   3
-  CASE-05    False  False  yes    0.00   1.00   0
-  CASE-06    False  False  yes    0.00   1.00   1
+  case       gold   pred   top1   agree  flags
+  CASE-01    True   True   0.00   1.00   2
+  CASE-02    True   True   0.67   1.00   1
+  CASE-03    True   True   0.25   0.50   1
+  CASE-04    False  False  0.00   0.75   3
+  CASE-05    False  False  0.00   1.00   0
+  CASE-06    False  False  0.00   1.00   1
 ```
 
 `gold` is the answer-key label, `pred` the system's decision — the two columns match on every case. `agree` is the fraction of agents landing on the same yes/no; `flags` counts verification checks that fired.
