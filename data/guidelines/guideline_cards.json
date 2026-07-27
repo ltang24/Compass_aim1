@@ -1,0 +1,204 @@
+{
+  "version": "0.1",
+  "note": "Statements are paraphrases written for this project, not guideline text. Each card names the rubric fact that pulls it into context, so retrieval is deterministic and every citation an agent makes can be checked against this file.",
+  "cards": [
+    {
+      "card_id": "GL-ELIG-BMI",
+      "source": "ADA Standards of Care in Diabetes 2026, Section 8",
+      "citation": "Diabetes Care. 2026;49(Suppl 1):S166",
+      "topic": "Who is eligible for obesity pharmacotherapy",
+      "statement": "Medicines for obesity are approved as an addition to reduced-calorie eating and more physical activity for adults with a BMI of 30 or above, or 27 or above when at least one weight-related condition is also present. Examples of qualifying conditions include type 2 diabetes, high blood pressure and abnormal lipids.",
+      "strength": "Label-defined eligibility",
+      "trigger": "always"
+    },
+    {
+      "card_id": "GL-ELIG-ADJUNCT",
+      "source": "ADA Obesity Association 2026, Pharmacologic Treatment of Obesity in Adults",
+      "citation": "Diabetes Obes Cardiometab Care. 2026;1(1):5-36",
+      "topic": "Medicine sits on top of behavioural care, not instead of it",
+      "statement": "Prescribe obesity medicines only alongside behavioural and lifestyle treatment, and complete a full pre-treatment review first: weight history, weight-related conditions, examination and relevant labs.",
+      "strength": "Recommendation",
+      "trigger": "always"
+    },
+    {
+      "card_id": "GL-ELIG-MEDS-REVIEW",
+      "source": "ADA Obesity Association 2026, Pharmacologic Treatment of Obesity in Adults",
+      "citation": "Diabetes Obes Cardiometab Care. 2026;1(1):5-36",
+      "topic": "Check the current medicine list for drugs that add weight",
+      "statement": "Before starting an obesity medicine, review what else the patient takes. Drugs that promote weight gain are common, and the more of them a patient is on, the more their BMI and waist tend to rise over time. Consider switching to alternatives that do not add weight.",
+      "strength": "Recommendation",
+      "trigger": "always"
+    },
+    {
+      "card_id": "GL-STAGE-ABCD",
+      "source": "AACE 2025 obesity / ABCD algorithm",
+      "citation": "Nadolsky K, et al. Endocr Pract. 2025;31(11):1351-1394",
+      "topic": "Stage the disease by complications, not by BMI alone",
+      "statement": "Stage 1 means no current weight-related conditions but future risk. Stage 2 means mild to moderate complications. Stage 3 means at least one severe complication. Staging is largely independent of BMI: if complications are present, the amount of body fat is already harming health whether the BMI is 28 or 38.",
+      "strength": "Consensus statement",
+      "trigger": "always"
+    },
+    {
+      "card_id": "GL-STAGE-INTENSITY",
+      "source": "AACE 2025 obesity / ABCD algorithm",
+      "citation": "Nadolsky K, et al. Endocr Pract. 2025;31(11):1351-1394",
+      "topic": "Treat harder once complications appear",
+      "statement": "Treatment intensity should follow the stage. Once complications are present the goal shifts to reversing them, which usually means using medicine rather than relying on lifestyle change alone. The target is better health, not a number on the scale.",
+      "strength": "Consensus statement",
+      "trigger": "stage_2_or_3"
+    },
+    {
+      "card_id": "GL-ASCVD",
+      "source": "ADA Standards of Care in Diabetes 2026, Recommendation 9.7",
+      "citation": "Diabetes Care. 2026;49(Suppl 1):S183",
+      "topic": "Type 2 diabetes with established or high-risk cardiovascular disease",
+      "statement": "For adults with type 2 diabetes and established atherosclerotic cardiovascular disease, or at high risk of it, the treatment plan should include a medicine shown to reduce cardiovascular events, such as a GLP-1 receptor agonist or an SGLT2 inhibitor. This holds regardless of the current HbA1c.",
+      "strength": "Grade A",
+      "trigger": "t2d_with_ascvd"
+    },
+    {
+      "card_id": "GL-CKD",
+      "source": "ADA Standards of Care in Diabetes 2026, Recommendation 9.10",
+      "citation": "Diabetes Care. 2026;49(Suppl 1):S183",
+      "topic": "Type 2 diabetes with chronic kidney disease",
+      "statement": "For adults with type 2 diabetes and chronic kidney disease, meaning a confirmed eGFR between 20 and 60 or albuminuria, use an SGLT2 inhibitor or a GLP-1 receptor agonist with proven benefit in this group. The aim is to slow kidney decline and cut cardiovascular events as well as manage glucose, and it applies regardless of HbA1c.",
+      "strength": "Recommendation",
+      "trigger": "t2d_with_ckd"
+    },
+    {
+      "card_id": "GL-HF",
+      "source": "ADA Standards of Care in Diabetes 2026, Recommendations 9.8 and 9.9",
+      "citation": "Diabetes Care. 2026;49(Suppl 1):S183",
+      "topic": "Type 2 diabetes with heart failure",
+      "statement": "For type 2 diabetes with heart failure of either type, an SGLT2 inhibitor is recommended for glucose control and to prevent heart failure admissions, regardless of HbA1c. Where obesity and symptomatic HFpEF are both present, the plan should include an incretin-based medicine shown to improve heart failure symptoms or reduce events.",
+      "strength": "Grade A / B",
+      "trigger": "t2d_with_hf"
+    },
+    {
+      "card_id": "GL-CARDIORENAL-PRIMACY",
+      "source": "ADA Standards of Care in Diabetes 2026",
+      "citation": "Diabetes Care. 2026;49(Suppl 1):S183",
+      "topic": "HbA1c is no longer the only measure of success",
+      "statement": "Cutting cardiovascular and kidney risk now sits alongside glucose control as a primary goal, not below it. Do not treat HbA1c as the sole marker of whether treatment is working.",
+      "strength": "Framing",
+      "trigger": "has_t2d"
+    },
+    {
+      "card_id": "GL-STOP-MTC",
+      "source": "US prescribing information, semaglutide and tirzepatide",
+      "citation": "WEGOVY and ZEPBOUND prescribing information, boxed warning",
+      "topic": "Absolute contraindication: thyroid C-cell tumour risk",
+      "statement": "These medicines carry a boxed warning for thyroid C-cell tumours and must not be used in anyone with a personal or family history of medullary thyroid carcinoma, or in anyone with multiple endocrine neoplasia type 2. The warning applies to the whole class. A family history of papillary, follicular or Hurthle cell thyroid cancer is not a contraindication.",
+      "strength": "Absolute contraindication",
+      "trigger": "mtc_or_men2"
+    },
+    {
+      "card_id": "GL-STOP-HYPERSENS",
+      "source": "US prescribing information, semaglutide and tirzepatide",
+      "citation": "WEGOVY and ZEPBOUND prescribing information",
+      "topic": "Absolute contraindication: prior serious reaction",
+      "statement": "Do not use in anyone who has had a serious hypersensitivity reaction to the drug or any of its ingredients. Anaphylaxis and angioedema have been reported after marketing.",
+      "strength": "Absolute contraindication",
+      "trigger": "prior_hypersensitivity"
+    },
+    {
+      "card_id": "GL-STOP-PREGNANCY",
+      "source": "ADA Obesity Association 2026, Pharmacologic Treatment of Obesity in Adults",
+      "citation": "Diabetes Obes Cardiometab Care. 2026;1(1):5-36",
+      "topic": "Absolute contraindication: pregnancy",
+      "statement": "Obesity medicines are contraindicated in pregnancy. For anyone who is pregnant or planning a pregnancy, step up lifestyle treatment instead. Stop the medicine when a pregnancy is recognised.",
+      "strength": "Absolute contraindication",
+      "trigger": "pregnant_or_planning"
+    },
+    {
+      "card_id": "GL-CAUTION-PANCREATITIS",
+      "source": "US prescribing information, GLP-1 receptor agonist class",
+      "citation": "WEGOVY prescribing information, warnings and precautions",
+      "topic": "Caution: pancreatitis",
+      "statement": "Acute pancreatitis has been seen with these medicines. Stop the drug promptly if it is suspected. A past episode calls for a careful discussion rather than an automatic no.",
+      "strength": "Warning",
+      "trigger": "hx_pancreatitis"
+    },
+    {
+      "card_id": "GL-CAUTION-GI",
+      "source": "US prescribing information, GLP-1 receptor agonist class",
+      "citation": "WEGOVY prescribing information, warnings and precautions",
+      "topic": "Caution: severe stomach emptying problems",
+      "statement": "These medicines slow stomach emptying. Severe gastroparesis is a reason to avoid them or to be very cautious. Patients should tell any anaesthetist about the medicine before surgery or sedation because of aspiration risk.",
+      "strength": "Warning",
+      "trigger": "severe_gastroparesis"
+    },
+    {
+      "card_id": "GL-CAUTION-GALLBLADDER",
+      "source": "US prescribing information, GLP-1 receptor agonist class",
+      "citation": "WEGOVY prescribing information, warnings and precautions",
+      "topic": "Caution: gallbladder disease",
+      "statement": "Gallbladder problems including stones have been reported, more often with faster or larger weight loss. Active gallbladder disease calls for caution rather than an automatic no.",
+      "strength": "Warning",
+      "trigger": "active_gallbladder_disease"
+    },
+    {
+      "card_id": "GL-CAUTION-RETINOPATHY",
+      "source": "US prescribing information, semaglutide",
+      "citation": "OZEMPIC and WEGOVY prescribing information",
+      "topic": "Caution: diabetic eye disease",
+      "statement": "Rapid improvement in glucose control can temporarily worsen diabetic retinopathy. Check eye status before starting in anyone with diabetes and a history of retinopathy, and monitor. Mild or moderate non-proliferative changes are not a contraindication.",
+      "strength": "Warning",
+      "trigger": "any_retinopathy"
+    },
+    {
+      "card_id": "GL-DOSE-INDIVIDUALISE",
+      "source": "ADA Standards of Care in Diabetes 2026, Section 8",
+      "citation": "Diabetes Care. 2026;49(Suppl 1):S166",
+      "topic": "The best dose is not always the highest dose",
+      "statement": "Individualise the dose and how fast you step it up, balancing how well it works against how well it is tolerated. The best dose for a given patient may be below the maximum approved one.",
+      "strength": "Recommendation",
+      "trigger": "always"
+    },
+    {
+      "card_id": "GL-RENAL-NO-ADJUST",
+      "source": "GLP-1 receptor agonist prescribing information and pooled trial analyses",
+      "citation": "Semaglutide prescribing information; SUSTAIN and PIONEER pooled analyses",
+      "topic": "Kidney function and dosing",
+      "statement": "No dose adjustment is needed for reduced kidney function within the usual treated range. Glucose lowering is similar across eGFR strata. The practical concern is dehydration from nausea or vomiting, especially alongside a diuretic, an SGLT2 inhibitor or a renin-angiotensin blocker.",
+      "strength": "Labelling and pooled analysis",
+      "trigger": "reduced_egfr"
+    },
+    {
+      "card_id": "GL-VOLUME-AKI",
+      "source": "GLP-1 receptor agonist prescribing information, renal impairment warning",
+      "citation": "OZEMPIC prescribing information, warnings and precautions",
+      "topic": "Sick-day risk when combined with other kidney-active drugs",
+      "statement": "Nausea, vomiting and diarrhoea cause fluid loss and have led to acute kidney injury. Risk is higher alongside an SGLT2 inhibitor and a renin-angiotensin blocker. Step the dose up slowly and give clear sick-day instructions.",
+      "strength": "Warning",
+      "trigger": "volume_depletion_risk"
+    },
+    {
+      "card_id": "GL-WEIGHT-TARGET",
+      "source": "ADA Standards of Care in Diabetes 2026, Section 8",
+      "citation": "Diabetes Care. 2026;49(Suppl 1):S166",
+      "topic": "How much weight loss is worth aiming for",
+      "statement": "Losing 5 to 7 percent of body weight improves glucose and other cardiovascular risk markers. Anyone losing weight on purpose should be told to keep protein and micronutrient intake adequate.",
+      "strength": "Recommendation",
+      "trigger": "always"
+    },
+    {
+      "card_id": "GL-NO-PHARM-STAGE1",
+      "source": "AACE 2025 obesity / ABCD algorithm",
+      "citation": "Nadolsky K, et al. Endocr Pract. 2025;31(11):1351-1394",
+      "topic": "Overweight without complications",
+      "statement": "Where there is excess weight but no current weight-related condition, the aim is risk reduction through lifestyle change. This sits at the preclinical end of the spectrum and does not by itself call for drug treatment.",
+      "strength": "Consensus statement",
+      "trigger": "no_complications"
+    },
+    {
+      "card_id": "GL-ALT-NONINCRETIN",
+      "source": "AACE 2025 obesity / ABCD algorithm; ADA Obesity Association 2026",
+      "citation": "Endocr Pract. 2025;31(11):1351-1394; Diabetes Obes Cardiometab Care. 2026;1(1):5-36",
+      "topic": "What to do when the incretin class is closed off",
+      "statement": "A contraindication to one class does not mean no treatment. Other approved long-term options exist that do not act on the incretin pathway, and metabolic surgery remains on the table for patients whose BMI and complications support it.",
+      "strength": "Consensus statement",
+      "trigger": "hard_stop_present"
+    }
+  ]
+}

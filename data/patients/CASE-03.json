@@ -1,0 +1,284 @@
+{
+  "case_id": "CASE-03",
+  "age": 63,
+  "sex": "female",
+  "setting": "Endocrinology consult, outpatient",
+  "index_date": "2026-05-19",
+  "height_cm": 160.0,
+  "weight_kg": 105.5,
+  "bmi": 41.2,
+  "waist_cm": 117.0,
+  "sbp": 138,
+  "dbp": 76,
+  "heart_rate": 74,
+  "labs": {
+    "hba1c_pct": {
+      "value": 7.9,
+      "unit": "%",
+      "ref_low": 4.0,
+      "ref_high": 5.6
+    },
+    "fasting_glucose_mg_dl": {
+      "value": 158,
+      "unit": "mg/dL",
+      "ref_low": 70,
+      "ref_high": 99
+    },
+    "creatinine_mg_dl": {
+      "value": 1.18,
+      "unit": "mg/dL",
+      "ref_low": 0.6,
+      "ref_high": 1.1
+    },
+    "egfr": {
+      "value": 48,
+      "unit": "mL/min/1.73m2",
+      "ref_low": 60,
+      "ref_high": null
+    },
+    "uacr_mg_g": {
+      "value": 312,
+      "unit": "mg/g",
+      "ref_low": null,
+      "ref_high": 30
+    },
+    "potassium_mmol_l": {
+      "value": 4.4,
+      "unit": "mmol/L",
+      "ref_low": 3.5,
+      "ref_high": 5.1
+    },
+    "ldl_mg_dl": {
+      "value": 82,
+      "unit": "mg/dL",
+      "ref_low": null,
+      "ref_high": 100
+    },
+    "triglycerides_mg_dl": {
+      "value": 174,
+      "unit": "mg/dL",
+      "ref_low": null,
+      "ref_high": 150
+    },
+    "alt_u_l": {
+      "value": 42,
+      "unit": "U/L",
+      "ref_low": 7,
+      "ref_high": 45
+    },
+    "hemoglobin_g_dl": {
+      "value": 12.6,
+      "unit": "g/dL",
+      "ref_low": 12.0,
+      "ref_high": 15.5
+    }
+  },
+  "weight_trajectory": [
+    {
+      "date": "2024-06-04",
+      "weight_kg": 105.9,
+      "bmi": 41.4,
+      "waist_cm": 118
+    },
+    {
+      "date": "2024-11-12",
+      "weight_kg": 106.8,
+      "bmi": 41.7,
+      "waist_cm": null
+    },
+    {
+      "date": "2025-04-22",
+      "weight_kg": 105.1,
+      "bmi": 41.1,
+      "waist_cm": 117
+    },
+    {
+      "date": "2025-10-07",
+      "weight_kg": 106.2,
+      "bmi": 41.5,
+      "waist_cm": null
+    },
+    {
+      "date": "2026-02-10",
+      "weight_kg": 105.4,
+      "bmi": 41.2,
+      "waist_cm": null
+    },
+    {
+      "date": "2026-05-19",
+      "weight_kg": 105.5,
+      "bmi": 41.2,
+      "waist_cm": 117
+    }
+  ],
+  "conditions": [
+    {
+      "name": "Type 2 diabetes mellitus",
+      "onset": "2013-07",
+      "status": "above target",
+      "severe": false,
+      "obesity_related": true
+    },
+    {
+      "name": "Chronic kidney disease stage G3a category A3",
+      "onset": "2023-02",
+      "status": "eGFR fell 55 to 48, urine ACR rose 210 to 312",
+      "severe": true,
+      "obesity_related": true
+    },
+    {
+      "name": "Essential hypertension",
+      "onset": "2010-05",
+      "status": "near goal",
+      "severe": false,
+      "obesity_related": true
+    },
+    {
+      "name": "Obstructive sleep apnea, severe, AHI 34",
+      "onset": "2020-11",
+      "status": "on CPAP",
+      "severe": true,
+      "obesity_related": true
+    },
+    {
+      "name": "MASLD with raised transaminases",
+      "onset": "2024-09",
+      "status": "active",
+      "severe": false,
+      "obesity_related": true
+    },
+    {
+      "name": "Moderate non-proliferative diabetic retinopathy",
+      "onset": "2024-03",
+      "status": "no proliferative change",
+      "severe": false,
+      "obesity_related": false
+    }
+  ],
+  "medications": [
+    {
+      "drug": "metformin",
+      "dose": "1000 mg twice daily",
+      "start": "2013-07",
+      "weight_promoting": false
+    },
+    {
+      "drug": "empagliflozin",
+      "dose": "10 mg daily",
+      "start": "2023-03",
+      "weight_promoting": false
+    },
+    {
+      "drug": "losartan",
+      "dose": "100 mg daily",
+      "start": "2015-06",
+      "weight_promoting": false
+    },
+    {
+      "drug": "atorvastatin",
+      "dose": "40 mg daily",
+      "start": "2018-02",
+      "weight_promoting": false
+    },
+    {
+      "drug": "amlodipine",
+      "dose": "5 mg daily",
+      "start": "2019-04",
+      "weight_promoting": false
+    }
+  ],
+  "contraindications": {
+    "personal_hx_mtc": false,
+    "family_hx_mtc": false,
+    "men2": false,
+    "pregnant": false,
+    "lactating": false,
+    "planning_pregnancy": false,
+    "prior_glp1_hypersensitivity": false,
+    "hx_pancreatitis": false,
+    "severe_gastroparesis": false,
+    "active_gallbladder_disease": false,
+    "proliferative_retinopathy": false,
+    "free_text": "Postmenopausal. Retinopathy is non-proliferative."
+  },
+  "prior_therapy": {
+    "lifestyle_program": "Kidney and diabetes medical nutrition therapy with a dietitian",
+    "lifestyle_months": 12,
+    "lifestyle_adherent": true,
+    "lifestyle_max_loss_pct": 1.6,
+    "current_loss_pct_from_baseline": 0.4,
+    "prior_aom": [],
+    "prior_glucose_lowering": [
+      "empagliflozin, current"
+    ]
+  },
+  "encounters": [
+    {
+      "date": "2024-06-04",
+      "kind": "follow-up",
+      "specialty": "Internal medicine"
+    },
+    {
+      "date": "2024-09-18",
+      "kind": "consult",
+      "specialty": "Nephrology"
+    },
+    {
+      "date": "2024-11-12",
+      "kind": "follow-up",
+      "specialty": "Internal medicine"
+    },
+    {
+      "date": "2025-04-22",
+      "kind": "follow-up",
+      "specialty": "Internal medicine"
+    },
+    {
+      "date": "2025-06-30",
+      "kind": "follow-up",
+      "specialty": "Nephrology"
+    },
+    {
+      "date": "2025-10-07",
+      "kind": "follow-up",
+      "specialty": "Internal medicine"
+    },
+    {
+      "date": "2025-11-25",
+      "kind": "follow-up",
+      "specialty": "Sleep medicine"
+    },
+    {
+      "date": "2026-02-10",
+      "kind": "follow-up",
+      "specialty": "Internal medicine"
+    },
+    {
+      "date": "2026-03-24",
+      "kind": "diabetic eye exam",
+      "specialty": "Ophthalmology"
+    },
+    {
+      "date": "2026-04-28",
+      "kind": "follow-up",
+      "specialty": "Nephrology"
+    },
+    {
+      "date": "2026-05-19",
+      "kind": "index visit",
+      "specialty": "Endocrinology"
+    }
+  ],
+  "notes": [
+    {
+      "date": "2026-04-28",
+      "author_specialty": "Nephrology",
+      "text": "Urine ACR up from 210 to 312 over the year despite full-dose ARB and an SGLT2 inhibitor. eGFR down from 55 to 48. Suggest adding something with proven kidney benefit."
+    },
+    {
+      "date": "2026-05-19",
+      "author_specialty": "Endocrinology",
+      "text": "Weight flat near 105 kg for two years despite steady nutrition follow-up. No thyroid cancer history, no MEN 2, no pancreatitis, no gallbladder disease. March eye exam showed moderate non-proliferative changes only."
+    }
+  ]
+}

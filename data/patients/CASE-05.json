@@ -1,0 +1,267 @@
+{
+  "case_id": "CASE-05",
+  "age": 41,
+  "sex": "male",
+  "setting": "Obesity medicine clinic, outpatient",
+  "index_date": "2026-06-16",
+  "height_cm": 175.0,
+  "weight_kg": 118.0,
+  "bmi": 38.5,
+  "waist_cm": 121.0,
+  "sbp": 140,
+  "dbp": 86,
+  "heart_rate": 72,
+  "labs": {
+    "hba1c_pct": {
+      "value": 6.1,
+      "unit": "%",
+      "ref_low": 4.0,
+      "ref_high": 5.6
+    },
+    "fasting_glucose_mg_dl": {
+      "value": 114,
+      "unit": "mg/dL",
+      "ref_low": 70,
+      "ref_high": 99
+    },
+    "ldl_mg_dl": {
+      "value": 138,
+      "unit": "mg/dL",
+      "ref_low": null,
+      "ref_high": 100
+    },
+    "hdl_mg_dl": {
+      "value": 36,
+      "unit": "mg/dL",
+      "ref_low": 40,
+      "ref_high": null
+    },
+    "triglycerides_mg_dl": {
+      "value": 228,
+      "unit": "mg/dL",
+      "ref_low": null,
+      "ref_high": 150
+    },
+    "alt_u_l": {
+      "value": 56,
+      "unit": "U/L",
+      "ref_low": 7,
+      "ref_high": 45
+    },
+    "ast_u_l": {
+      "value": 41,
+      "unit": "U/L",
+      "ref_low": 10,
+      "ref_high": 40
+    },
+    "egfr": {
+      "value": 96,
+      "unit": "mL/min/1.73m2",
+      "ref_low": 60,
+      "ref_high": null
+    },
+    "calcitonin_pg_ml": {
+      "value": 4,
+      "unit": "pg/mL",
+      "ref_low": null,
+      "ref_high": 10
+    },
+    "cea_ng_ml": {
+      "value": 2.1,
+      "unit": "ng/mL",
+      "ref_low": null,
+      "ref_high": 3.0
+    },
+    "tsh_miu_l": {
+      "value": 1.4,
+      "unit": "mIU/L",
+      "ref_low": 0.4,
+      "ref_high": 4.5
+    }
+  },
+  "weight_trajectory": [
+    {
+      "date": "2024-07-30",
+      "weight_kg": 118.4,
+      "bmi": 38.7,
+      "waist_cm": 122
+    },
+    {
+      "date": "2025-01-21",
+      "weight_kg": 119.6,
+      "bmi": 39.0,
+      "waist_cm": null
+    },
+    {
+      "date": "2025-08-12",
+      "weight_kg": 117.8,
+      "bmi": 38.5,
+      "waist_cm": 121
+    },
+    {
+      "date": "2026-02-03",
+      "weight_kg": 118.9,
+      "bmi": 38.8,
+      "waist_cm": null
+    },
+    {
+      "date": "2026-06-16",
+      "weight_kg": 118.0,
+      "bmi": 38.5,
+      "waist_cm": 121
+    }
+  ],
+  "conditions": [
+    {
+      "name": "Medullary thyroid carcinoma, total thyroidectomy 2014",
+      "onset": "2014-05",
+      "status": "in remission, annual surveillance",
+      "severe": false,
+      "obesity_related": false
+    },
+    {
+      "name": "Multiple endocrine neoplasia type 2A, germline RET codon 634",
+      "onset": "2014-05",
+      "status": "confirmed genetic diagnosis",
+      "severe": false,
+      "obesity_related": false
+    },
+    {
+      "name": "Class II obesity",
+      "onset": "2017-06",
+      "status": "active",
+      "severe": false,
+      "obesity_related": true
+    },
+    {
+      "name": "Essential hypertension",
+      "onset": "2020-09",
+      "status": "above goal",
+      "severe": false,
+      "obesity_related": true
+    },
+    {
+      "name": "Mixed dyslipidemia",
+      "onset": "2020-09",
+      "status": "active",
+      "severe": false,
+      "obesity_related": true
+    },
+    {
+      "name": "Prediabetes",
+      "onset": "2024-11",
+      "status": "active",
+      "severe": false,
+      "obesity_related": true
+    },
+    {
+      "name": "MASLD",
+      "onset": "2024-11",
+      "status": "active",
+      "severe": false,
+      "obesity_related": true
+    }
+  ],
+  "medications": [
+    {
+      "drug": "levothyroxine",
+      "dose": "150 mcg daily",
+      "start": "2014-06",
+      "weight_promoting": false
+    },
+    {
+      "drug": "amlodipine",
+      "dose": "10 mg daily",
+      "start": "2020-10",
+      "weight_promoting": false
+    },
+    {
+      "drug": "rosuvastatin",
+      "dose": "20 mg daily",
+      "start": "2021-01",
+      "weight_promoting": false
+    }
+  ],
+  "contraindications": {
+    "personal_hx_mtc": true,
+    "family_hx_mtc": true,
+    "men2": true,
+    "pregnant": false,
+    "lactating": false,
+    "planning_pregnancy": false,
+    "prior_glp1_hypersensitivity": false,
+    "hx_pancreatitis": false,
+    "severe_gastroparesis": false,
+    "active_gallbladder_disease": false,
+    "proliferative_retinopathy": false,
+    "free_text": "Total thyroidectomy 2014 for medullary thyroid carcinoma. MEN 2A with germline RET codon 634. Father and paternal aunt also RET positive."
+  },
+  "prior_therapy": {
+    "lifestyle_program": "Health-system medical weight management program",
+    "lifestyle_months": 12,
+    "lifestyle_adherent": true,
+    "lifestyle_max_loss_pct": 2.4,
+    "current_loss_pct_from_baseline": 2.4,
+    "prior_aom": [],
+    "prior_glucose_lowering": []
+  },
+  "encounters": [
+    {
+      "date": "2024-07-30",
+      "kind": "annual",
+      "specialty": "Internal medicine"
+    },
+    {
+      "date": "2024-10-08",
+      "kind": "cancer surveillance",
+      "specialty": "Endocrinology"
+    },
+    {
+      "date": "2025-01-21",
+      "kind": "follow-up",
+      "specialty": "Internal medicine"
+    },
+    {
+      "date": "2025-03-10",
+      "kind": "intake",
+      "specialty": "Obesity medicine"
+    },
+    {
+      "date": "2025-06-17",
+      "kind": "follow-up",
+      "specialty": "Obesity medicine"
+    },
+    {
+      "date": "2025-08-12",
+      "kind": "follow-up",
+      "specialty": "Internal medicine"
+    },
+    {
+      "date": "2025-10-21",
+      "kind": "cancer surveillance",
+      "specialty": "Endocrinology"
+    },
+    {
+      "date": "2026-02-03",
+      "kind": "follow-up",
+      "specialty": "Obesity medicine"
+    },
+    {
+      "date": "2026-06-16",
+      "kind": "index visit",
+      "specialty": "Obesity medicine"
+    }
+  ],
+  "notes": [
+    {
+      "date": "2025-10-21",
+      "author_specialty": "Endocrinology",
+      "text": "Twelve years out from total thyroidectomy for medullary thyroid carcinoma with MEN 2A. Germline RET codon 634. Calcitonin low, CEA stable, neck ultrasound clear."
+    },
+    {
+      "date": "2026-06-16",
+      "author_specialty": "Obesity medicine",
+      "text": "A full year in the program with only 2.9 kg off. He has read about GLP-1 medicines and asks directly whether he can start one."
+    }
+  ]
+}

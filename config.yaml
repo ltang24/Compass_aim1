@@ -1,0 +1,56 @@
+# Model pool. One model per GPU, held resident for the whole run.
+#
+# Picked so that no two agents share a pretraining lineage. Four fine-tunes of
+# the same base model would make correlated mistakes, and the debate between
+# them would look like agreement while telling you nothing.
+#
+# All four are under 10B and fit on one 40-48 GB card in bf16 with room for a
+# long context. Two GPUs are left free on a 6-card box.
+#
+# Llama and Gemma repos are gated. Accept the licence on Hugging Face and run
+# `huggingface-cli login` before the first run.
+
+agents:
+  - agent_id: agent_1
+    model_name: Qwen/Qwen2.5-7B-Instruct
+    gpu: 0
+    max_new_tokens: 900
+    notes: general reasoning, reliable at holding an output format
+
+  - agent_id: agent_2
+    model_name: NousResearch/Meta-Llama-3.1-8B-Instruct
+    gpu: 1
+    max_new_tokens: 900
+    notes: gated repo
+
+  - agent_id: agent_3
+    model_name: google/gemma-2-9b-it
+    gpu: 2
+    max_new_tokens: 900
+    notes: gated repo, different lineage from the rest
+
+  - agent_id: agent_4
+    model_name: aaditya/Llama3-OpenBioLLM-8B
+    gpu: 3
+    max_new_tokens: 900
+    notes: biomedical continued pretraining
+
+  # Fifth agent, optional. Uses GPU 4.
+  # - agent_id: agent_5
+  #   model_name: mistralai/Ministral-8B-Instruct-2410
+  #   gpu: 4
+  #   max_new_tokens: 900
+
+# Sampling temperature per round. Round 1 is deliberately warm so the agents
+# start from different places. It cools as the discussion converges.
+temperatures:
+  round1_independent: 0.75
+  round2_critique: 0.50
+  round3_revise: 0.35
+  round4_writeup: 0.20
+
+seed: 7
+
+escalation:
+  min_consensus: 0.75      # below this, send to a clinician
+  min_mean_confidence: 3.0

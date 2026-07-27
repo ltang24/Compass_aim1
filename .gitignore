@@ -1,0 +1,9 @@
+data/gold/
+*answer_key*
+*INVESTIGATOR*
+outputs/
+logs/
+*.orig
+*.bak*
+__pycache__/
+*.pyc
