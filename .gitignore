@@ -1,3 +1,11 @@
+# Synthetic patient records and gold labels are regenerated locally
+# by `python data/build_dataset.py`. They are not distributed.
+data/patients/
+data/gold/
+
+# Run artifacts contain the full case text
+outputs/
+logs/
 
 *.orig
 *.bak*
